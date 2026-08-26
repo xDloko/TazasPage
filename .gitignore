@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+out/
+
+# Environment
+.env*.local
+
+# Tooling
+.agents/
+.claude/
+.playwright/
+
+# Lock files that aren't needed for initial commit
+package-lock.json
+skills-lock.json
+
+# IDE / OS
+.DS_Store
+Thumbs.db
