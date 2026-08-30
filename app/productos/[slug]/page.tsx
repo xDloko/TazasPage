@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useSupabase } from '@/components/providers/supabase-provider';
 import { useCart } from '@/components/providers/cart-provider';
 import { Product, ProductVariant } from '@/lib/types';
@@ -11,6 +12,7 @@ import { ArrowLeft, ShoppingBag, Check } from 'lucide-react';
 export default function ProductoPage({ params }: { params: { slug: string } }) {
   const sb = useSupabase();
   const { addItem } = useCart();
+  const router = useRouter();
   const [product, setProduct] = useState<(Product & { variants: ProductVariant[] }) | null>(null);
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null);
   const [loading, setLoading] = useState(true);
@@ -25,9 +27,10 @@ export default function ProductoPage({ params }: { params: { slug: string } }) {
         .eq('active', true)
         .single();
       if (!data) { notFound(); return; }
-      const p = data as Product & { variants: ProductVariant[] };
+      const row = data as Product & { product_variants: ProductVariant[] };
+      const p = { ...row, variants: row.product_variants };
       setProduct(p);
-      const firstActive = p.variants.find(v => v.active) ?? p.variants[0] ?? null;
+      const firstActive = row.product_variants.find(v => v.active) ?? row.product_variants[0] ?? null;
       setSelectedVariant(firstActive);
       setLoading(false);
     }
@@ -136,10 +139,8 @@ export default function ProductoPage({ params }: { params: { slug: string } }) {
               <Button size="lg" variant="outline" onClick={handleAdd} className="flex-1">
                 {added ? <><Check className="mr-2 h-5 w-5" /> Agregado</> : <><ShoppingBag className="mr-2 h-5 w-5" /> Agregar al carrito</>}
               </Button>
-              <Button size="lg" asChild className="flex-1">
-                <Link href={`/personalizar/${product.id}`}>
-                  Personalizar ahora
-                </Link>
+              <Button size="lg" className="flex-1" onClick={() => router.push(`/personalizar/${product.id}`)}>
+                Personalizar ahora
               </Button>
             </div>
           </div>

@@ -5,7 +5,7 @@ import { useSupabase } from '@/components/providers/supabase-provider';
 import { useCart } from '@/components/providers/cart-provider';
 import { Product, ProductVariant } from '@/lib/types';
 import { Button } from '@/components/ui/button';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Search } from 'lucide-react';
 
 export default function TiendaPage() {
   const sb = useSupabase();
@@ -16,14 +16,18 @@ export default function TiendaPage() {
   const [filterColor, setFilterColor] = useState<string>('all');
 
   useEffect(() => {
+    let cancelled = false;
     async function fetchProducts() {
       const { data } = await sb.from('products').select('*, product_variants(*)').eq('active', true).order('name');
+      if (cancelled) return;
       const rows = (data as any) ?? [];
       setProducts(rows.map((r: any) => ({ ...r, variants: r.product_variants })));
       setLoading(false);
     }
     fetchProducts();
-  }, [sb]);
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const allColors = Array.from(new Set(products.flatMap(p => p.variants.map(v => v.color_hex))));
 

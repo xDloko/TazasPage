@@ -45,16 +45,17 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
-            <Link href="/carrito" className="relative">
-              <Button variant="ghost" size="sm" className="gap-2">
-                <ShoppingBag className="h-4 w-4" />
-                <span className="hidden sm:inline">Carrito</span>
-                {count > 0 && (
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-terracotta text-xs font-bold text-white">
-                    {count}
-                  </span>
-                )}
-              </Button>
+            <Link
+              href="/carrito"
+              className="relative flex items-center gap-2 rounded-xl px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-terracotta dark:text-slate-300"
+            >
+              <ShoppingBag className="h-4 w-4" />
+              <span className="hidden sm:inline">Carrito</span>
+              {count > 0 && (
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-terracotta text-xs font-bold text-white">
+                  {count}
+                </span>
+              )}
             </Link>
             <ThemeToggle theme={theme} setTheme={setTheme} />
           </nav>

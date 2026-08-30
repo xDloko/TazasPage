@@ -20,11 +20,9 @@ export default function CarritoPage() {
           <p className="mt-2 text-slate-500 dark:text-slate-400">
             Explora nuestra tienda y encuentra la taza perfecta
           </p>
-          <Link href="/tienda">
-            <Button size="lg" className="mt-6">
+          <Link href="/tienda" className="inline-flex items-center justify-center rounded-2xl px-5 text-base font-semibold bg-terracotta text-white shadow-sm active:scale-[0.97] mt-6">
               Ir a la tienda
-            </Button>
-          </Link>
+            </Link>
         </div>
       </div>
     );
@@ -116,12 +114,10 @@ export default function CarritoPage() {
               <Button size="lg" className="mt-6 w-full" onClick={() => router.push('/checkout')}>
                 Ir a checkout
               </Button>
-              <Link href="/tienda">
-                <Button variant="ghost" className="mt-2 w-full">
+              <Button variant="ghost" size="lg" className="mt-2 w-full" onClick={() => router.push('/tienda')}>
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Seguir comprando
                 </Button>
-              </Link>
             </div>
           </div>
         </div>

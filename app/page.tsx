@@ -2,9 +2,24 @@
 import Link from 'next/link';
 import { useSupabase } from '@/components/providers/supabase-provider';
 import { Product, ProductVariant } from '@/lib/types';
-import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Truck, Palette, Heart } from 'lucide-react';
 import { useEffect, useState } from 'react';
+
+/* Decorator-only classes applied to <Link> when it replaces a Button */
+const buttonLikeClasses: Record<string, string> = {
+  'lg-default':
+    'inline-flex items-center justify-center rounded-2xl px-8 text-lg font-semibold bg-terracotta text-white shadow-sm active:scale-[0.97]',
+  'lg-outline':
+    'inline-flex items-center justify-center rounded-2xl px-8 text-lg font-semibold border-2 border-terracotta text-terracotta hover:bg-terracotta/10 active:scale-[0.97]',
+  'lg-secondary':
+    'inline-flex items-center justify-center rounded-2xl px-8 text-lg font-semibold bg-slate-200 text-slate-800 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-100 active:scale-[0.97]',
+  'md-outline':
+    'inline-flex items-center justify-center rounded-2xl px-5 text-base font-semibold border-2 border-terracotta text-terracotta hover:bg-terracotta/10 active:scale-[0.97]',
+  'md-default':
+    'inline-flex items-center justify-center rounded-2xl px-5 text-base font-semibold bg-terracotta text-white shadow-sm active:scale-[0.97]',
+  'sm-outline':
+    'inline-flex items-center justify-center rounded-2xl px-3 text-sm font-semibold border-2 border-terracotta text-terracotta hover:bg-terracotta/10 active:scale-[0.97]',
+};
 
 export default function Home() {
   const sb = useSupabase();
@@ -39,16 +54,12 @@ export default function Home() {
                 Disena y personaliza tu taza de ceramica unica. Elige color, agrega imagenes o texto, y crea algo que sea verdaderamente tuyo.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Button size="lg" asChild>
-                  <Link href="/tienda">
-                    Explorar tazas <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/personalizar/demo">
-                    <Sparkles className="mr-2 h-5 w-5" /> Probar customizador
-                  </Link>
-                </Button>
+                <Link href="/tienda" className={buttonLikeClasses['lg-default']}>
+                  Explorar tazas <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+                <Link href="/personalizar/demo" className={buttonLikeClasses['lg-outline']}>
+                  <Sparkles className="mr-2 h-5 w-5" /> Probar customizador
+                </Link>
               </div>
             </div>
             <div className="hidden lg:block">
@@ -113,9 +124,9 @@ export default function Home() {
             </div>
           )}
           <div className="mt-8 text-center">
-            <Button variant="outline" size="lg" asChild>
-              <Link href="/tienda">Ver todo el catalogo</Link>
-            </Button>
+            <Link href="/tienda" className={buttonLikeClasses['lg-outline']}>
+              Ver todo el catalogo
+            </Link>
           </div>
         </div>
       </section>
@@ -150,11 +161,9 @@ export default function Home() {
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
             Empieza ahora y personaliza cada detalle. Desde el color hasta el diseno, tu taza sera unica.
           </p>
-          <Button size="lg" className="mt-8" asChild>
-            <Link href="/tienda">
+          <Link href="/tienda" className={`${buttonLikeClasses['lg-default']} mt-8`}>
               Empezar ahora <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-          </Button>
         </div>
       </section>
     </main>

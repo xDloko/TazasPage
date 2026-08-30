@@ -38,11 +38,9 @@ export default function CheckoutPage() {
           <p className="mt-2 text-slate-500">
             Gracias por tu compra! Tu pedido esta siendo procesado.
           </p>
-          <Link href="/cuenta">
-            <Button size="lg" className="mt-6">
+          <Button size="lg" className="mt-6" onClick={() => router.push('/cuenta')}>
               Ver mis ordenes
             </Button>
-          </Link>
         </div>
       </div>
     );
