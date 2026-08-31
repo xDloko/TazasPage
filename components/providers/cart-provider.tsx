@@ -11,6 +11,7 @@ export interface CartItem {
   image_url?: string | null;
 }
 
+/* eslint-disable no-unused-vars */
 interface CartContextType {
   items: CartItem[];
   addItem: (item: Omit<CartItem, 'id'>) => void;
@@ -20,6 +21,7 @@ interface CartContextType {
   total: number;
   count: number;
 }
+/* eslint-enable no-unused-vars */
 
 const CartContext = createContext<CartContextType | null>(null);
 

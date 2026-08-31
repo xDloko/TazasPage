@@ -2,8 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCart } from '@/components/providers/cart-provider';
-import { Button } from '@/components/ui/button';
-import { Menu, X, Palette as PaletteIcon, ShoppingBag, User, Sun, Moon, Laptop } from 'lucide-react';
+import { Menu, X, ShoppingBag, Sun, Moon, Laptop } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
@@ -105,7 +104,7 @@ function ThemeToggle({
   setTheme,
 }: {
   theme: string | undefined;
-  setTheme: (t: string) => void;
+  setTheme: (_t: string) => void;
 }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);

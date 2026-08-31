@@ -1,16 +1,21 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSupabase } from '@/components/providers/supabase-provider';
 import { useCart } from '@/components/providers/cart-provider';
 import { Product, ProductVariant } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { ShoppingBag, Search } from 'lucide-react';
 
+// Tipo para el resultado de Supabase con la relación product_variants
+type ProductWithVariants = Product & { variants: ProductVariant[] };
+type SupabaseProductRow = Product & { product_variants: ProductVariant[] };
+
 export default function TiendaPage() {
   const sb = useSupabase();
   const { addItem } = useCart();
-  const [products, setProducts] = useState<(Product & { variants: ProductVariant[] })[]>([]);
+  const [products, setProducts] = useState<ProductWithVariants[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [filterColor, setFilterColor] = useState<string>('all');
@@ -20,8 +25,8 @@ export default function TiendaPage() {
     async function fetchProducts() {
       const { data } = await sb.from('products').select('*, product_variants(*)').eq('active', true).order('name');
       if (cancelled) return;
-      const rows = (data as any) ?? [];
-      setProducts(rows.map((r: any) => ({ ...r, variants: r.product_variants })));
+      const rows = (data as SupabaseProductRow[] | null) ?? [];
+      setProducts(rows.map(r => ({ ...r, variants: r.product_variants })));
       setLoading(false);
     }
     fetchProducts();
@@ -37,7 +42,7 @@ export default function TiendaPage() {
     return matchesSearch && matchesColor && p.active;
   });
 
-  const handleQuickAdd = (e: React.MouseEvent, product: Product & { variants: ProductVariant[] }) => {
+  const handleQuickAdd = (e: React.MouseEvent, product: ProductWithVariants) => {
     e.preventDefault();
     e.stopPropagation();
     const firstVariant = product.variants.find(v => v.active) ?? product.variants[0];
@@ -126,13 +131,13 @@ export default function TiendaPage() {
                   href={`/productos/${product.slug}`}
                   className="group rounded-3xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-800"
                 >
-                  <div className="aspect-square overflow-hidden rounded-2xl bg-slate-100">
+                  <div className="aspect-square overflow-hidden rounded-2xl bg-slate-100 relative">
                     {product.cover_image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
+                      <Image
                         src={product.cover_image}
                         alt={product.name}
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center text-4xl">

@@ -1,0 +1,81 @@
+- generic [active] [ref=f5e1]:
+  - alert [ref=f5e2]
+  - generic [ref=f5e3]:
+    - banner [ref=f5e4]:
+      - generic [ref=f5e6]:
+        - link "☕ Tia Yami" [ref=f5e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f5e8]: ☕
+          - generic [ref=f5e9]: Tia Yami
+        - navigation [ref=f5e10]:
+          - link "Inicio" [ref=f5e11] [cursor=pointer]:
+            - /url: /
+          - link "Tienda" [ref=f5e12] [cursor=pointer]:
+            - /url: /tienda
+          - link "Cuenta" [ref=f5e13] [cursor=pointer]:
+            - /url: /cuenta
+          - link "Carrito 1" [ref=f5e14] [cursor=pointer]:
+            - /url: /carrito
+            - generic [ref=f5e18]: Carrito
+            - generic [ref=f5e19]: "1"
+          - generic [ref=f5e20]:
+            - 'button "Tema: light" [ref=f5e21] [cursor=pointer]'
+            - 'button "Tema: dark" [ref=f5e28] [cursor=pointer]'
+            - 'button "Tema: system" [ref=f5e31] [cursor=pointer]'
+    - main [ref=f5e34]:
+      - generic [ref=f5e36]:
+        - generic [ref=f5e37]:
+          - heading "Crear cuenta" [level=2] [ref=f5e41]
+          - paragraph [ref=f5e42]: Unete para personalizar tus tazas
+        - generic [ref=f5e43]:
+          - generic [ref=f5e44]:
+            - text: Nombre
+            - textbox "Nombre" [ref=f5e45]
+          - generic [ref=f5e46]:
+            - text: Correo electronico
+            - textbox "Correo electronico" [ref=f5e47]
+          - generic [ref=f5e48]:
+            - text: Contrasena
+            - textbox "Contrasena" [ref=f5e49]
+            - paragraph [ref=f5e50]: Minimo 6 caracteres
+          - button "Registrarse" [ref=f5e51] [cursor=pointer]
+        - generic [ref=f5e52]:
+          - text: Ya tienes cuenta?
+          - link "Inicia sesion" [ref=f5e53] [cursor=pointer]:
+            - /url: /auth/signin
+    - contentinfo [ref=f5e54]:
+      - generic [ref=f5e55]:
+        - generic [ref=f5e56]:
+          - generic [ref=f5e57]:
+            - generic [ref=f5e58]:
+              - generic [ref=f5e59]: ☕
+              - generic [ref=f5e60]: Tia Yami
+            - paragraph [ref=f5e61]: Ceramica artesanal personalizada. Disena tu taza unica con nosotros.
+          - generic [ref=f5e62]:
+            - heading "Tienda" [level=3] [ref=f5e63]
+            - list [ref=f5e64]:
+              - listitem [ref=f5e65]:
+                - link "Todas las tazas" [ref=f5e66] [cursor=pointer]:
+                  - /url: /tienda
+              - listitem [ref=f5e67]:
+                - link "Nuevos disenos" [ref=f5e68] [cursor=pointer]:
+                  - /url: /tienda
+          - generic [ref=f5e69]:
+            - heading "Ayuda" [level=3] [ref=f5e70]
+            - list [ref=f5e71]:
+              - listitem [ref=f5e72]:
+                - link "Contacto" [ref=f5e73] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f5e74]:
+                - link "Envios" [ref=f5e75] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f5e76]:
+                - link "Devoluciones" [ref=f5e77] [cursor=pointer]:
+                  - /url: /
+          - generic [ref=f5e78]:
+            - heading "Contacto" [level=3] [ref=f5e79]
+            - list [ref=f5e80]:
+              - listitem [ref=f5e81]: hola@tiayami.cl
+              - listitem [ref=f5e85]: "@tiayami"
+              - listitem [ref=f5e89]: Tia Yami Ceramica
+        - generic [ref=f5e92]: Tia Yami 2026 — Hecho con amor y ceramica

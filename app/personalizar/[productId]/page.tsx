@@ -1,9 +1,9 @@
 'use client';
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { use, useEffect, useRef, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase';
-import { Product, ProductVariant, DesignLayer } from '@/lib/types';
+import { Product, ProductVariant, DesignLayer, Json } from '@/lib/types';
 import { useCart } from '@/components/providers/cart-provider';
 import { useAuth } from '@/components/providers/auth-provider';
 import { Button } from '@/components/ui/button';
@@ -11,7 +11,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Upload, ChevronLeft, RotateCcw, Plus, ShoppingBag } from 'lucide-react';
 
-export default function PersonalizarPage({ params }: { params: { productId: string } }) {
+export default function PersonalizarPage({ params }: { params: Promise<{ productId: string }> }) {
+  const { productId } = use(params);
   const sb = createClient();
   const router = useRouter();
   const { addItem } = useCart();
@@ -37,7 +38,7 @@ export default function PersonalizarPage({ params }: { params: { productId: stri
     async function fetch() {
       const { data } = await sb.from('products')
         .select('*, product_variants(*)')
-        .eq('id', params.productId)
+        .eq('id', productId)
         .eq('active', true)
         .single();
       if (!data) return;
@@ -48,7 +49,7 @@ export default function PersonalizarPage({ params }: { params: { productId: stri
       setLoading(false);
     }
     fetch();
-  }, [sb, params.productId]);
+  }, [sb, productId]);
 
   const autoSave = useCallback(async (config: { layers: DesignLayer[]; variant_id: string | null }) => {
     if (!user || !product) return;
@@ -65,7 +66,7 @@ export default function PersonalizarPage({ params }: { params: { productId: stri
       user_id: user.id,
       product_id: product.id!,
       variant_id: config.variant_id,
-      layers: config.layers as any,
+      layers: config.layers as unknown as Json,
       engraving: false,
     };
 
@@ -194,10 +195,6 @@ export default function PersonalizarPage({ params }: { params: { productId: stri
 
   const handleRotate = (layer: DesignLayer) => {
     if (!previewRef.current) return;
-    const rect = previewRef.current.getBoundingClientRect();
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-    const angle = Math.atan2(cy - layer.y, cx - layer.x) * (180 / Math.PI) + 90;
     updateLayer(layer.id!, { rotation: (layer.rotation || 0) + 30 });
   };
 
@@ -257,7 +254,7 @@ export default function PersonalizarPage({ params }: { params: { productId: stri
                   style={{
                     left: `${(layer.x ?? 0)}px`,
                     top: `${(layer.y ?? 0)}px`,
-                    transform: `translate(-50%, -50%) scale(${layer.scale ?? 1}) rotate(${layer.rotation ?? 0}deg)`,
+                    transform: `translate(-50%, -50%) scale(${layer.flipped ? -1 : 1} ${layer.scale ?? 1}) rotate(${layer.rotation ?? 0}deg)`,
                     zIndex: layers.indexOf(layer) + 10,
                   }}
                 >
@@ -312,10 +309,9 @@ export default function PersonalizarPage({ params }: { params: { productId: stri
                     Eliminar
                   </Button>
                   <Button size="sm" variant="ghost" onClick={() => {
-                    const flip = -layer.scale;
-                    updateLayer(activeLayerId, { scale: Math.abs(flip) });
+                    updateLayer(activeLayerId, { flipped: !layer.flipped });
                   }}>
-                    Voltear
+                    {layer.flipped ? 'Desvoltear' : 'Voltear'}
                   </Button>
                 </div>
               );

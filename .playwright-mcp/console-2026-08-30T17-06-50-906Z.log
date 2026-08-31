@@ -1,0 +1,2843 @@
+[     536ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:38559
+[     648ms] [WARNING] Image with src "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[     683ms] [WARNING] Image with src "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600" was detected as the Largest Contentful Paint (LCP). Please add the "priority" property if this image is above the fold.
+Read more: https://nextjs.org/docs/api-reference/next/image#priority @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[  360971ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  361107ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  361122ms] [LOG] [Fast Refresh] done in 16ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[  361451ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  361469ms] [LOG] [Fast Refresh] done in 19ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[  361674ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:112
+[  362024ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:38559
+[  362126ms] [WARNING] Image with src "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[  362163ms] [WARNING] Image with src "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600" was detected as the Largest Contentful Paint (LCP). Please add the "priority" property if this image is above the fold.
+Read more: https://nextjs.org/docs/api-reference/next/image#priority @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[  373563ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  373645ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  373665ms] [LOG] [Fast Refresh] done in 20ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[  373889ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:112
+[  374227ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:38559
+[  374319ms] [WARNING] Image with src "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[  374346ms] [WARNING] Image with src "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600" was detected as the Largest Contentful Paint (LCP). Please add the "priority" property if this image is above the fold.
+Read more: https://nextjs.org/docs/api-reference/next/image#priority @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[  507601ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  507730ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  507753ms] [LOG] [Fast Refresh] done in 22ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[  507853ms] [LOG] [Fast Refresh] done in 123ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[  671108ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  672848ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/chevron-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\chevron-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/chevron-left.js
+__barrel_optimize__?names=ChevronLeft,Plus,RotateCcw,ShoppingBag,Upload!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/personalizar/[productId]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/rotate-ccw.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\rotate-ccw.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/rotate-ccw.js
+__barrel_optimize__?names=ChevronLeft,Plus,RotateCcw,ShoppingBag,Upload!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/personalizar/[productId]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/upload.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\upload.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/upload.js
+__barrel_optimize__?names=ChevronLeft,Plus,RotateCcw,ShoppingBag,Upload!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/personalizar/[productId]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/next/dist/client/components/not-found-boundary.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\next\dist\client\components\not-found-boundary.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/next/dist/client/components/not-found-boundary.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672849ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+./node_modules/next/dist/client/components/app-router.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672902ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  672913ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fauth%2Fsignin%2Fpage&page=%2Fauth%2Fsignin%2Fpage&appPaths=%2Fauth%2Fsignin%2Fpage&pagePath=private-next-app-dir%2Fauth%2Fsignin%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672913ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fcarrito%2Fpage&page=%2Fcarrito%2Fpage&appPaths=%2Fcarrito%2Fpage&pagePath=private-next-app-dir%2Fcarrito%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672913ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672913ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpersonalizar%2F%5BproductId%5D%2Fpage&page=%2Fpersonalizar%2F%5BproductId%5D%2Fpage&appPaths=%2Fpersonalizar%2F%5BproductId%5D%2Fpage&pagePath=private-next-app-dir%2Fpersonalizar%2F%5BproductId%5D%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  672913ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Ftienda%2Fpage&page=%2Ftienda%2Fpage&appPaths=%2Ftienda%2Fpage&pagePath=private-next-app-dir%2Ftienda%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712761ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712761ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712761ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712761ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/chevron-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\chevron-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/chevron-left.js
+__barrel_optimize__?names=ChevronLeft,Plus,RotateCcw,ShoppingBag,Upload!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/personalizar/[productId]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712761ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712761ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712761ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712761ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712761ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/rotate-ccw.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\rotate-ccw.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/rotate-ccw.js
+__barrel_optimize__?names=ChevronLeft,Plus,RotateCcw,ShoppingBag,Upload!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/personalizar/[productId]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/upload.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\upload.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/upload.js
+__barrel_optimize__?names=ChevronLeft,Plus,RotateCcw,ShoppingBag,Upload!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/personalizar/[productId]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712762ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/chevron-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\chevron-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/chevron-left.js
+__barrel_optimize__?names=ChevronLeft,Plus,RotateCcw,ShoppingBag,Upload!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/personalizar/[productId]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712812ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/rotate-ccw.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\rotate-ccw.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/rotate-ccw.js
+__barrel_optimize__?names=ChevronLeft,Plus,RotateCcw,ShoppingBag,Upload!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/personalizar/[productId]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/upload.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\upload.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/upload.js
+__barrel_optimize__?names=ChevronLeft,Plus,RotateCcw,ShoppingBag,Upload!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/personalizar/[productId]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712813ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712829ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fauth%2Fsignin%2Fpage&page=%2Fauth%2Fsignin%2Fpage&appPaths=%2Fauth%2Fsignin%2Fpage&pagePath=private-next-app-dir%2Fauth%2Fsignin%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712829ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fcarrito%2Fpage&page=%2Fcarrito%2Fpage&appPaths=%2Fcarrito%2Fpage&pagePath=private-next-app-dir%2Fcarrito%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712829ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712829ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpersonalizar%2F%5BproductId%5D%2Fpage&page=%2Fpersonalizar%2F%5BproductId%5D%2Fpage&appPaths=%2Fpersonalizar%2F%5BproductId%5D%2Fpage&pagePath=private-next-app-dir%2Fpersonalizar%2F%5BproductId%5D%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  712829ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Ftienda%2Fpage&page=%2Ftienda%2Fpage&appPaths=%2Ftienda%2Fpage&pagePath=private-next-app-dir%2Ftienda%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  818396ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864254ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  864393ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864394ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864395ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864395ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864395ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864397ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  864524ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  864525ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872413ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872487ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872488ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872488ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872488ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872490ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  872576ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872576ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872576ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872576ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872576ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872576ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872576ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872576ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872577ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872579ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  872666ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  872667ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  893899ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  894014ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894014ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894014ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894014ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894014ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894015ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894105ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894106ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894107ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  894191ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894191ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  894192ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  975782ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  976377ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/page-bootstrap.js
+./node_modules/next/dist/client/next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-left.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-left.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\arrow-right.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/check.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\check.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/check.js
+__barrel_optimize__?names=ArrowLeft,Check,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/productos/[slug]/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/heart.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\heart.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/heart.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/laptop.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\laptop.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/laptop.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/log-in.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\log-in.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/log-in.js
+__barrel_optimize__?names=LogIn!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/auth/signin/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/menu.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\menu.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/menu.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/minus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\minus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/minus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/moon.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\moon.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/moon.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/palette.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\palette.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/palette.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/plus.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\plus.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/plus.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/search.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\search.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/search.js
+__barrel_optimize__?names=Search,ShoppingBag!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/tienda/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\shopping-bag.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/shopping-bag.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sparkles.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sparkles.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sparkles.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/sun.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\sun.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/sun.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/trash-2.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\trash-2.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/trash-2.js
+__barrel_optimize__?names=ArrowLeft,Minus,Plus,ShoppingBag,Trash2!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/carrito/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/truck.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\truck.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/truck.js
+__barrel_optimize__?names=ArrowRight,Heart,Palette,Sparkles,Truck!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/lucide-react/dist/esm/icons/x.js
+Error: Failed to read source code from H:\Paginas\TiaYami\TazasPage\node_modules\lucide-react\dist\esm\icons\x.js
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Import trace for requested module:
+./node_modules/lucide-react/dist/esm/icons/x.js
+__barrel_optimize__?names=Laptop,Menu,Moon,ShoppingBag,Sun,X!=!./node_modules/lucide-react/dist/esm/lucide-react.js
+./components/site-header.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/next/dist/lib/require-instrumentation-client.js:11:1
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976377ms] [ERROR] ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js:188:3
+Module not found: Can't resolve '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  186 |   }
+  187 |
+> 188 |   import(
+      |   ^
+  189 |     // @ts-expect-error requires "moduleResolution": "node16" in tsconfig.json and not .ts extension
+  190 |     '@vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts'
+  191 |   ).then(({ connect }) => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976505ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES&page=%2F_error&preferredRegion=&absolutePagePath=.%2Fnode_modules%5Cnext%5Cdist%5Cpages%5C_error.js&absoluteAppPath=next%2Fdist%2Fpages%2F_app&absoluteDocumentPath=next%2Fdist%2Fpages%2F_document&middlewareConfigBase64=e30%3D!
+Error: Invariant: Expected to replace at least one import @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976505ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES&page=%2F_error&preferredRegion=&absolutePagePath=next%2Fdist%2Fpages%2F_error&absoluteAppPath=next%2Fdist%2Fpages%2F_app&absoluteDocumentPath=next%2Fdist%2Fpages%2F_document&middlewareConfigBase64=e30%3D!
+Error: Invariant: Expected to replace at least one import @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976505ms] [ERROR] ./node_modules/next/dist/pages/_document.js
+Module not found: Can't resolve 'next/dist/server/future/route-modules/pages/vendored/contexts/html-context'
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976505ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fauth%2Fsignin%2Fpage&page=%2Fauth%2Fsignin%2Fpage&appPaths=%2Fauth%2Fsignin%2Fpage&pagePath=private-next-app-dir%2Fauth%2Fsignin%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976505ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fcarrito%2Fpage&page=%2Fcarrito%2Fpage&appPaths=%2Fcarrito%2Fpage&pagePath=private-next-app-dir%2Fcarrito%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976505ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976505ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpersonalizar%2F%5BproductId%5D%2Fpage&page=%2Fpersonalizar%2F%5BproductId%5D%2Fpage&appPaths=%2Fpersonalizar%2F%5BproductId%5D%2Fpage&pagePath=private-next-app-dir%2Fpersonalizar%2F%5BproductId%5D%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976505ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Ftienda%2Fpage&page=%2Ftienda%2Fpage&appPaths=%2Ftienda%2Fpage&pagePath=private-next-app-dir%2Ftienda%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976528ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES&page=%2F_error&preferredRegion=&absolutePagePath=.%2Fnode_modules%5Cnext%5Cdist%5Cpages%5C_error.js&absoluteAppPath=next%2Fdist%2Fpages%2F_app&absoluteDocumentPath=next%2Fdist%2Fpages%2F_document&middlewareConfigBase64=e30%3D!
+Error: Invariant: Expected to replace at least one import @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976528ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES&page=%2F_error&preferredRegion=&absolutePagePath=next%2Fdist%2Fpages%2F_error&absoluteAppPath=next%2Fdist%2Fpages%2F_app&absoluteDocumentPath=next%2Fdist%2Fpages%2F_document&middlewareConfigBase64=e30%3D!
+Error: Invariant: Expected to replace at least one import @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976528ms] [ERROR] ./node_modules/next/dist/pages/_document.js
+Module not found: Can't resolve 'next/dist/server/future/route-modules/pages/vendored/contexts/html-context'
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976528ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fauth%2Fsignin%2Fpage&page=%2Fauth%2Fsignin%2Fpage&appPaths=%2Fauth%2Fsignin%2Fpage&pagePath=private-next-app-dir%2Fauth%2Fsignin%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976528ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fcarrito%2Fpage&page=%2Fcarrito%2Fpage&appPaths=%2Fcarrito%2Fpage&pagePath=private-next-app-dir%2Fcarrito%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976528ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976528ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpersonalizar%2F%5BproductId%5D%2Fpage&page=%2Fpersonalizar%2F%5BproductId%5D%2Fpage&appPaths=%2Fpersonalizar%2F%5BproductId%5D%2Fpage&pagePath=private-next-app-dir%2Fpersonalizar%2F%5BproductId%5D%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976528ms] [ERROR] ./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Ftienda%2Fpage&page=%2Ftienda%2Fpage&appPaths=%2Ftienda%2Fpage&pagePath=private-next-app-dir%2Ftienda%2Fpage.tsx&appDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=H%3A%5CPaginas%5CTiaYami%5CTazasPage&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+TypeError: (0 , _utils.isAppBuiltinPage) is not a function @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  976554ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/carrito?_rsc=638wg:0
+[  976566ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/carrito?_rsc=638wg:0
+[  976587ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/carrito:0
+[  998953ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0

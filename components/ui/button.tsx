@@ -11,6 +11,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean;
 }
 
+// Elementos que pueden recibir className vía asChild
+type AsChildTarget = React.HTMLAttributes<HTMLElement> & { className?: string };
+
 const layoutClasses = 'inline-flex items-center justify-center';
 const behaviorClasses =
   'rounded-2xl font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.97]';
@@ -33,9 +36,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const classes = cn(variantClasses[variant], sizeClasses[size], className);
 
     if (asChild && React.isValidElement(props.children)) {
-      return React.cloneElement(props.children as React.ReactElement<any>, {
+      const child = props.children as React.ReactElement<AsChildTarget>;
+      return React.cloneElement(child, {
         ...props,
-        className: cn(layoutClasses, behaviorClasses, classes, (props.children as any)?.className),
+        className: cn(layoutClasses, behaviorClasses, classes, child.props?.className),
       });
     }
 

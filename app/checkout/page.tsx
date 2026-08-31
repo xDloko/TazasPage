@@ -56,7 +56,7 @@ export default function CheckoutPage() {
     setLoading(true);
     setError(null);
     try {
-      const orderData: any = {
+      const orderData = {
         user_id: user.id,
         total,
         shipping_address: address,
@@ -68,9 +68,10 @@ export default function CheckoutPage() {
         .select('id')
         .single();
       if (orderErr) throw orderErr;
+      if (!order) throw new Error('No se pudo crear la orden');
 
       const orderItems = items.map(item => ({
-        order_id: (order as any).id,
+        order_id: order.id,
         product_id: item.product_id,
         variant_id: item.variant_id,
         qty: item.qty,
@@ -82,8 +83,9 @@ export default function CheckoutPage() {
 
       clear();
       setDone(true);
-    } catch (err: any) {
-      setError(err.message ?? 'Error al procesar la orden');
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Error al procesar la orden';
+      setError(message);
     } finally {
       setLoading(false);
     }

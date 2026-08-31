@@ -263,12 +263,13 @@ export interface DesignLayer {
   y: number;
   scale: number;
   rotation: number;
+  flipped?: boolean;
 }
 
 export interface DesignConfig {
   product_id: string;
   variant_id?: string;
   layers: DesignLayer[];
-  engraving: { enabled: boolean };
+  engraving: boolean;
   preview_url?: string;
 }

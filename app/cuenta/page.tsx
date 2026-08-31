@@ -4,11 +4,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useSupabase } from '@/components/providers/supabase-provider';
 import { useAuth } from '@/components/providers/auth-provider';
-import { useCart } from '@/components/providers/cart-provider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { LogOut, Package, Palette, User, ShoppingBag, ChevronRight } from 'lucide-react';
+import { LogOut, Package, Palette, User, ChevronRight } from 'lucide-react';
 
 type Order = {
   id: string;

@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { useRouter } from 'next/navigation';
@@ -9,7 +9,8 @@ import { Product, ProductVariant } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ShoppingBag, Check } from 'lucide-react';
 
-export default function ProductoPage({ params }: { params: { slug: string } }) {
+export default function ProductoPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params);
   const sb = useSupabase();
   const { addItem } = useCart();
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function ProductoPage({ params }: { params: { slug: string } }) {
       const { data } = await sb
         .from('products')
         .select('*, product_variants(*)')
-        .eq('slug', params.slug)
+        .eq('slug', slug)
         .eq('active', true)
         .single();
       if (!data) { notFound(); return; }
@@ -35,7 +36,7 @@ export default function ProductoPage({ params }: { params: { slug: string } }) {
       setLoading(false);
     }
     fetch();
-  }, [sb, params.slug]);
+  }, [sb, slug]);
 
   if (loading) {
     return (

@@ -3,6 +3,12 @@ import { createContext, useContext, useEffect, useState, useCallback } from 'rea
 import { useSupabase } from './supabase-provider';
 import { useRouter } from 'next/navigation';
 
+// Tipo del user_metadata que Supabase expone en el JWT
+interface UserMetadata {
+  full_name?: string;
+  avatar_url?: string;
+}
+
 interface AuthUser {
   id: string;
   email: string | null;
@@ -11,49 +17,59 @@ interface AuthUser {
   role: string;
 }
 
+/* eslint-disable no-unused-vars */
 interface AuthContextType {
   user: AuthUser | null;
   isLoading: boolean;
+  error: string | null;
+  clearError: () => void;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string, name: string) => Promise<void>;
   signOut: () => Promise<void>;
   updateProfile: (data: { name: string; avatar_url?: string }) => Promise<void>;
 }
+/* eslint-enable no-unused-vars */
 
 const AuthContext = createContext<AuthContextType | null>(null);
+
+// Extrae un AuthUser desde la sesión de Supabase de forma tipada
+function userFromSession(session: { user: { id: string; email?: string | null; user_metadata?: unknown } }): AuthUser {
+  const meta = (session.user.user_metadata ?? {}) as UserMetadata;
+  return {
+    id: session.user.id,
+    email: session.user.email ?? null,
+    name: meta.full_name ?? null,
+    avatar_url: meta.avatar_url ?? null,
+    role: 'customer',
+  };
+}
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const sb = useSupabase();
   const router = useRouter();
   const [user, setUser] = useState<AuthUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let mounted = true;
 
     async function init() {
       try {
-        const { data, error } = await sb.auth.getSession();
-        if (error) throw error;
+        const { data, error: sessionError } = await sb.auth.getSession();
+        if (sessionError) {
+          throw new Error(sessionError.message || 'No se pudo obtener la sesión');
+        }
 
         if (mounted) {
-          if (data.session?.user) {
-            setUser({
-              id: data.session.user.id,
-              email: data.session.user.email ?? null,
-              name: ((data.session.user.user_metadata as any)?.full_name) || null,
-              avatar_url: ((data.session.user.user_metadata as any)?.avatar_url) || null,
-              role: 'customer',
-            });
-          } else {
-            setUser(null);
-          }
+          setUser(data.session ? userFromSession(data.session) : null);
           setIsLoading(false);
         }
-      } catch {
+      } catch (err) {
         if (mounted) {
           setUser(null);
           setIsLoading(false);
+          setError(err instanceof Error ? err.message : 'Error desconocido al inicializar sesión');
         }
       }
     }
@@ -61,17 +77,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     init();
 
     const { data: { subscription } } = sb.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) {
-        setUser({
-          id: session.user.id,
-          email: session.user.email ?? null,
-          name: ((session.user.user_metadata as any)?.full_name) || null,
-          avatar_url: ((session.user.user_metadata as any)?.avatar_url) || null,
-          role: 'customer',
-        });
-      } else {
-        setUser(null);
-      }
+      setUser(session ? userFromSession(session) : null);
       setIsLoading(false);
     });
 
@@ -81,40 +87,62 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, [sb]);
 
-  const signIn = useCallback(async (email: string, password: string) => {
-    const { error } = await sb.auth.signInWithPassword({ email, password });
-    if (error) throw new Error(error.message || 'Error al iniciar sesión');
+  const clearError = useCallback(() => setError(null), []);
+
+  const signIn = useCallback(async (_email: string, _password: string) => {
+    setError(null);
+    const { error: signInError } = await sb.auth.signInWithPassword({ email: _email, password: _password });
+    if (signInError) {
+      const message = signInError.message || 'Error al iniciar sesión';
+      setError(message);
+      throw new Error(message);
+    }
   }, [sb]);
 
-  const signUp = useCallback(async (email: string, password: string, name: string) => {
-    const { error } = await sb.auth.signUp({
-      email,
-      password,
+  const signUp = useCallback(async (_email: string, _password: string, name: string) => {
+    setError(null);
+    const { error: signUpError } = await sb.auth.signUp({
+      email: _email,
+      password: _password,
       options: { data: { full_name: name, avatar_url: null } },
     });
-    if (error) throw new Error(error.message || 'Error al crear la cuenta');
+    if (signUpError) {
+      const message = signUpError.message || 'Error al crear la cuenta';
+      setError(message);
+      throw new Error(message);
+    }
   }, [sb]);
 
   const signOut = useCallback(async () => {
-    const { error } = await sb.auth.signOut();
-    if (error) throw new Error(error.message || 'Error al cerrar sesión');
+    setError(null);
+    const { error: signOutError } = await sb.auth.signOut();
+    if (signOutError) {
+      const message = signOutError.message || 'Error al cerrar sesión';
+      setError(message);
+      throw new Error(message);
+    }
     router.refresh();
     router.push('/');
   }, [sb, router]);
 
   const updateProfile = useCallback(async (data: { name: string; avatar_url?: string }) => {
-    const { error } = await sb.auth.updateUser({
+    setError(null);
+    const { error: updateError } = await sb.auth.updateUser({
       data: {
         full_name: data.name,
         avatar_url: data.avatar_url ?? null,
       },
     });
-    if (error) throw new Error(error.message || 'Error al actualizar perfil');
+    if (updateError) {
+      const message = updateError.message || 'Error al actualizar perfil';
+      setError(message);
+      throw new Error(message);
+    }
     setUser(prev => prev ? { ...prev, name: data.name, avatar_url: data.avatar_url ?? null } : prev);
   }, [sb]);
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, signIn, signUp, signOut, updateProfile }}>
+    <AuthContext.Provider value={{ user, isLoading, error, clearError, signIn, signUp, signOut, updateProfile }}>
       {children}
     </AuthContext.Provider>
   );

@@ -22,8 +22,8 @@ export default function SignInPage() {
     try {
       await signIn(email, password);
       router.push(redirectTo);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Error al iniciar sesión');
     }
   };
 

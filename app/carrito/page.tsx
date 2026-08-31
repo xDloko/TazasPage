@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCart } from '@/components/providers/cart-provider';
 import { Button } from '@/components/ui/button';
 import { Trash2, Plus, Minus, ArrowLeft, ShoppingBag } from 'lucide-react';
@@ -48,10 +49,9 @@ export default function CarritoPage() {
                 key={item.id}
                 className="flex gap-4 rounded-3xl bg-white p-4 shadow-sm dark:bg-slate-800"
               >
-                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl bg-slate-100">
+                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl bg-slate-100 relative">
                   {item.image_url ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={item.image_url} alt={item.name} className="h-full w-full object-cover" />
+                    <Image src={item.image_url} alt={item.name} fill className="object-cover" />
                   ) : (
                     <div className="flex h-full items-center justify-center text-2xl">☕</div>
                   )}

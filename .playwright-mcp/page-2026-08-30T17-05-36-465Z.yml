@@ -1,0 +1,87 @@
+- generic [active] [ref=f17e1]:
+  - alert [ref=f17e2]
+  - generic [ref=f17e3]:
+    - banner [ref=f17e4]:
+      - generic [ref=f17e6]:
+        - link "☕ Tia Yami" [ref=f17e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f17e8]: ☕
+          - generic [ref=f17e9]: Tia Yami
+        - navigation [ref=f17e10]:
+          - link "Inicio" [ref=f17e11] [cursor=pointer]:
+            - /url: /
+          - link "Tienda" [ref=f17e12] [cursor=pointer]:
+            - /url: /tienda
+          - link "Cuenta" [ref=f17e13] [cursor=pointer]:
+            - /url: /cuenta
+          - link "Carrito" [ref=f17e14] [cursor=pointer]:
+            - /url: /carrito
+    - main [ref=f17e20]:
+      - main [ref=f17e21]:
+        - generic [ref=f17e27]:
+          - generic [ref=f17e28]:
+            - generic [ref=f17e29]: Ceramica artesanal
+            - heading "Tu taza, tu estilo" [level=1] [ref=f17e30]: Tu taza,tu estilo
+            - paragraph [ref=f17e31]: Disena y personaliza tu taza de ceramica unica. Elige color, agrega imagenes o texto, y crea algo que sea verdaderamente tuyo.
+            - generic [ref=f17e32]:
+              - link "Explorar tazas" [ref=f17e33] [cursor=pointer]:
+                - /url: /tienda
+              - link "Probar customizador" [ref=f17e36] [cursor=pointer]:
+                - /url: /personalizar/demo
+          - generic [ref=f17e39]: ☕
+        - generic [ref=f17e56]:
+          - heading "Tazas destacadas" [level=2] [ref=f17e57]
+          - paragraph [ref=f17e58]: Nuestra seleccion favorita para personalizar
+          - link "Ver todo el catalogo" [ref=f17e67] [cursor=pointer]:
+            - /url: /tienda
+        - generic [ref=f17e70]:
+          - generic [ref=f17e71]:
+            - heading "Personaliza" [level=3] [ref=f17e79]
+            - paragraph [ref=f17e80]: Elige color, sube tu imagen o usa IA para generar un diseno unico.
+          - generic [ref=f17e81]:
+            - heading "Calidad" [level=3] [ref=f17e85]
+            - paragraph [ref=f17e86]: Ceramica de alta calidad con acabados duraderos y colores vibrantes.
+          - generic [ref=f17e87]:
+            - heading "Envio rapido" [level=3] [ref=f17e94]
+            - paragraph [ref=f17e95]: Recibe tu taza personalizada en 3-5 dias habiles a todo Chile.
+        - generic [ref=f17e97]:
+          - heading "Listo para crear tu taza?" [level=2] [ref=f17e98]
+          - paragraph [ref=f17e99]: Empieza ahora y personaliza cada detalle. Desde el color hasta el diseno, tu taza sera unica.
+          - link "Empezar ahora" [ref=f17e100] [cursor=pointer]:
+            - /url: /tienda
+    - contentinfo [ref=f17e103]:
+      - generic [ref=f17e104]:
+        - generic [ref=f17e105]:
+          - generic [ref=f17e106]:
+            - generic [ref=f17e107]:
+              - generic [ref=f17e108]: ☕
+              - generic [ref=f17e109]: Tia Yami
+            - paragraph [ref=f17e110]: Ceramica artesanal personalizada. Disena tu taza unica con nosotros.
+          - generic [ref=f17e111]:
+            - heading "Tienda" [level=3] [ref=f17e112]
+            - list [ref=f17e113]:
+              - listitem [ref=f17e114]:
+                - link "Todas las tazas" [ref=f17e115] [cursor=pointer]:
+                  - /url: /tienda
+              - listitem [ref=f17e116]:
+                - link "Nuevos disenos" [ref=f17e117] [cursor=pointer]:
+                  - /url: /tienda
+          - generic [ref=f17e118]:
+            - heading "Ayuda" [level=3] [ref=f17e119]
+            - list [ref=f17e120]:
+              - listitem [ref=f17e121]:
+                - link "Contacto" [ref=f17e122] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f17e123]:
+                - link "Envios" [ref=f17e124] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f17e125]:
+                - link "Devoluciones" [ref=f17e126] [cursor=pointer]:
+                  - /url: /
+          - generic [ref=f17e127]:
+            - heading "Contacto" [level=3] [ref=f17e128]
+            - list [ref=f17e129]:
+              - listitem [ref=f17e130]: hola@tiayami.cl
+              - listitem [ref=f17e134]: "@tiayami"
+              - listitem [ref=f17e138]: Tia Yami Ceramica
+        - generic [ref=f17e141]: Tia Yami 2026 — Hecho con amor y ceramica

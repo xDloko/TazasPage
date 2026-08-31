@@ -1,9 +1,13 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSupabase } from '@/components/providers/supabase-provider';
 import { Product, ProductVariant } from '@/lib/types';
 import { ArrowRight, Sparkles, Truck, Palette, Heart } from 'lucide-react';
 import { useEffect, useState } from 'react';
+
+type ProductWithVariants = Product & { variants: ProductVariant[] };
+type SupabaseProductRow = Product & { product_variants: ProductVariant[] };
 
 /* Decorator-only classes applied to <Link> when it replaces a Button */
 const buttonLikeClasses: Record<string, string> = {
@@ -23,18 +27,19 @@ const buttonLikeClasses: Record<string, string> = {
 
 export default function Home() {
   const sb = useSupabase();
-  const [featured, setFeatured] = useState<(Product & { variants: ProductVariant[] })[]>([]);
+  const [featured, setFeatured] = useState<ProductWithVariants[]>([]);
 
   useEffect(() => {
     sb.from('products').select('*, product_variants(*)').eq('active', true).limit(3).then(({ data }) => {
-      setFeatured((data as any) ?? []);
+      const rows = (data as SupabaseProductRow[] | null) ?? [];
+      setFeatured(rows.map(r => ({ ...r, variants: r.product_variants })));
     });
   }, [sb]);
 
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-bone px-4 dark:bg-slate-900">
+      <section className="relative overflow-hidden bg-bone px-4 dark:bg-slate-950">
         <div className="absolute inset-0 opacity-80 dark:opacity-30">
           <div className="absolute -left-40 top-1/2 h-[60rem] w-[60rem] -translate-y-1/2 rounded-full bg-gradient-to-br from-terracotta/20 to-transparent blur-3xl" />
           <div className="absolute -right-40 top-20 h-[40rem] w-[40rem] rounded-full bg-gradient-to-tl from-amber-200/40 to-transparent blur-3xl" />
@@ -107,9 +112,9 @@ export default function Home() {
                   href={`/productos/${p.slug}`}
                   className="group rounded-3xl bg-slate-50 p-4 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-800"
                 >
-                  <div className="aspect-square overflow-hidden rounded-2xl bg-slate-100">
+                  <div className="aspect-square overflow-hidden rounded-2xl bg-slate-100 relative">
                     {p.cover_image ? (
-                      <img src={p.cover_image} alt={p.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <Image src={p.cover_image} alt={p.name} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
                     ) : (
                       <div className="flex h-full items-center justify-center text-6xl">☕</div>
                     )}
