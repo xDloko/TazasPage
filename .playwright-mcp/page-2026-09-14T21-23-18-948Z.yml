@@ -1,0 +1,67 @@
+- generic [active] [ref=f13e1]:
+  - button "Open Next.js Dev Tools" [ref=f13e7] [cursor=pointer]
+  - alert [ref=f13e11]
+  - region "Notificaciones"
+  - generic [ref=f13e12]:
+    - banner [ref=f13e13]:
+      - generic [ref=f13e15]:
+        - link "☕ Tia Yami" [ref=f13e16] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f13e17]: ☕
+          - generic [ref=f13e18]: Tia Yami
+        - navigation [ref=f13e19]:
+          - link "Inicio" [ref=f13e20] [cursor=pointer]:
+            - /url: /
+          - link "Tienda" [ref=f13e21] [cursor=pointer]:
+            - /url: /tienda
+          - link "Cuenta" [ref=f13e22] [cursor=pointer]:
+            - /url: /cuenta
+          - link "Carrito 2" [ref=f13e23] [cursor=pointer]:
+            - /url: /carrito
+            - generic [ref=f13e27]: Carrito
+            - generic [ref=f13e28]: "2"
+          - generic [ref=f13e29]:
+            - 'button "Tema: light" [ref=f13e30] [cursor=pointer]'
+            - 'button "Tema: dark" [ref=f13e37] [cursor=pointer]'
+            - 'button "Tema: system" [ref=f13e40] [cursor=pointer]'
+    - main [ref=f13e43]
+    - contentinfo [ref=f13e46]:
+      - generic [ref=f13e47]:
+        - generic [ref=f13e48]:
+          - generic [ref=f13e49]:
+            - generic [ref=f13e50]:
+              - generic [ref=f13e51]: ☕
+              - generic [ref=f13e52]: Tia Yami
+            - paragraph [ref=f13e53]: Ceramica artesanal personalizada. Disena tu taza unica con nosotros.
+          - generic [ref=f13e54]:
+            - heading "Tienda" [level=3] [ref=f13e55]
+            - list [ref=f13e56]:
+              - listitem [ref=f13e57]:
+                - link "Todas las tazas" [ref=f13e58] [cursor=pointer]:
+                  - /url: /tienda
+              - listitem [ref=f13e59]:
+                - link "Nuevos disenos" [ref=f13e60] [cursor=pointer]:
+                  - /url: /tienda
+          - generic [ref=f13e61]:
+            - heading "Ayuda" [level=3] [ref=f13e62]
+            - list [ref=f13e63]:
+              - listitem [ref=f13e64]:
+                - link "Contacto" [ref=f13e65] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f13e66]:
+                - link "Envios" [ref=f13e67] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f13e68]:
+                - link "Devoluciones" [ref=f13e69] [cursor=pointer]:
+                  - /url: /
+          - generic [ref=f13e70]:
+            - heading "Contacto" [level=3] [ref=f13e71]
+            - list [ref=f13e72]:
+              - listitem [ref=f13e73]: hola@tiayami.cl
+              - listitem [ref=f13e77]:
+                - link "@tiayami" [ref=f13e78] [cursor=pointer]:
+                  - /url: https://instagram.com/tiayami
+              - listitem [ref=f13e81]:
+                - link "Tia Yami Ceramica" [ref=f13e82] [cursor=pointer]:
+                  - /url: https://facebook.com/tiayami
+        - generic [ref=f13e85]: Tia Yami 2026 — Hecho con amor y ceramica

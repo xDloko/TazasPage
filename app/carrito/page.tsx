@@ -51,7 +51,7 @@ export default function CarritoPage() {
               >
                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl bg-slate-100 relative">
                   {item.image_url ? (
-                    <Image src={item.image_url} alt={item.name} fill className="object-cover" />
+                    <Image src={item.image_url} alt={item.name} fill sizes="96px" className="object-cover" />
                   ) : (
                     <div className="flex h-full items-center justify-center text-2xl">☕</div>
                   )}

@@ -93,7 +93,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setError(null);
     const { error: signInError } = await sb.auth.signInWithPassword({ email: _email, password: _password });
     if (signInError) {
-      const message = signInError.message || 'Error al iniciar sesión';
+      // General error message to prevent account enumeration via error messages
+      const message = 'Credenciales incorrectas. Por favor verifica tu email y contraseña.';
       setError(message);
       throw new Error(message);
     }
@@ -107,7 +108,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       options: { data: { full_name: name, avatar_url: null } },
     });
     if (signUpError) {
-      const message = signUpError.message || 'Error al crear la cuenta';
+      // Generic error message to prevent account enumeration
+      // Supabase may return "User already registered" which reveals email existence
+      const message = 'No se pudo crear la cuenta. Inténtalo de nuevo más tarde.';
       setError(message);
       throw new Error(message);
     }

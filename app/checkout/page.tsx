@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useSupabase } from '@/components/providers/supabase-provider';
 import { useAuth } from '@/components/providers/auth-provider';
 import { useCart } from '@/components/providers/cart-provider';
+import { useToast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -14,7 +15,8 @@ import { ArrowLeft, CheckCircle2, Loader2 } from 'lucide-react';
 export default function CheckoutPage() {
   const sb = useSupabase();
   const { user } = useAuth();
-  const { items, total, clear } = useCart();
+  const { items, total, clear, validateAllPrices } = useCart();
+  const { toast } = useToast();
   const router = useRouter();
   const [address, setAddress] = useState('');
   const [loading, setLoading] = useState(false);
@@ -55,37 +57,77 @@ export default function CheckoutPage() {
     e.preventDefault();
     setLoading(true);
     setError(null);
-    try {
-      const orderData = {
-        user_id: user.id,
-        total,
-        shipping_address: address,
-        status: 'pending',
-      };
-      const { data: order, error: orderErr } = await sb
-        .from('orders')
-        .insert(orderData)
-        .select('id')
-        .single();
-      if (orderErr) throw orderErr;
-      if (!order) throw new Error('No se pudo crear la orden');
 
-      const orderItems = items.map(item => ({
-        order_id: order.id,
-        product_id: item.product_id,
-        variant_id: item.variant_id,
-        qty: item.qty,
-        unit_price: item.unit_price,
-        name: item.name,
-      }));
-      const { error: itemsErr } = await sb.from('order_items').insert(orderItems);
-      if (itemsErr) throw itemsErr;
+    // 1. Validar precios del carrito contra el servidor (1 sola llamada HTTP)
+    const { valid, errors } = await validateAllPrices();
+    if (!valid) {
+      const msg = errors.join('\n');
+      setError(msg);
+      toast({
+        variant: 'destructive',
+        title: 'Precios del carrito actualizados',
+        description: msg,
+      });
+      setLoading(false);
+      return;
+    }
+
+    try {
+      // 2. Validar sesión contra el servidor (getUser verifica JWT)
+      // Esto es más seguro que getSession porque valida firma y expiración
+      const { data: { user }, error: userError } = await sb.auth.getUser();
+      if (userError || !user) {
+        throw new Error('Sesión inválida o expirada. Por favor inicia sesión nuevamente.');
+      }
+
+      // 3. Obtener JWT para enviar a la Edge Function
+      const { data: { session } } = await sb.auth.getSession();
+      const jwt = session?.access_token;
+
+      if (!jwt) {
+        throw new Error('No se pudo obtener el token de autenticación');
+      }
+
+      // 3. Llamar a la Edge Function create-order (server-side validation + atomic creation)
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/create-order`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwt}`,
+        },
+        body: JSON.stringify({
+          items: items.map(item => ({
+            product_id: item.product_id,
+            variant_id: item.variant_id,
+            qty: item.qty,
+            unit_price: item.unit_price,
+            name: item.name,
+            note: item.note ?? null,
+          })),
+          shipping_address: address,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Error al crear la orden');
+      }
 
       clear();
       setDone(true);
+      toast({
+        title: 'Orden confirmada',
+        description: 'Gracias por tu compra! Tu pedido está siendo procesado.',
+      });
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Error al procesar la orden';
       setError(message);
+      toast({
+        variant: 'destructive',
+        title: 'Error al crear la orden',
+        description: message,
+      });
     } finally {
       setLoading(false);
     }

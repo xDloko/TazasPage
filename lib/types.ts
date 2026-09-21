@@ -249,27 +249,3 @@ export type Profile = Tables<'profiles'>;
 export type Design = Tables<'designs'>;
 export type Order = Tables<'orders'>;
 export type OrderItem = Tables<'order_items'>;
-
-// Customizer layer shape
-export interface DesignLayer {
-  id: string;
-  type: 'image' | 'text';
-  source?: 'upload' | 'ai';
-  url?: string;
-  content?: string;
-  fontSize?: number;
-  color?: string;
-  x: number;
-  y: number;
-  scale: number;
-  rotation: number;
-  flipped?: boolean;
-}
-
-export interface DesignConfig {
-  product_id: string;
-  variant_id?: string;
-  layers: DesignLayer[];
-  engraving: boolean;
-  preview_url?: string;
-}

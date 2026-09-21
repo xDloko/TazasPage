@@ -1,0 +1,94 @@
+- generic [active] [ref=e10]:
+  - button "Open Next.js Dev Tools" [ref=e6] [cursor=pointer]
+  - alert [ref=e11]
+  - region "Notificaciones"
+  - generic [ref=e12]:
+    - banner [ref=e13]:
+      - generic [ref=e15]:
+        - link "☕ Tia Yami" [ref=e16] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e17]: ☕
+          - generic [ref=e18]: Tia Yami
+        - navigation [ref=e19]:
+          - link "Inicio" [ref=e20] [cursor=pointer]:
+            - /url: /
+          - link "Tienda" [ref=e21] [cursor=pointer]:
+            - /url: /tienda
+          - link "Cuenta" [ref=e22] [cursor=pointer]:
+            - /url: /cuenta
+          - link "Carrito 1" [ref=e23] [cursor=pointer]:
+            - /url: /carrito
+            - generic [ref=e27]: Carrito
+            - generic [ref=e28]: "1"
+          - generic [ref=e29]:
+            - 'button "Tema: light" [ref=e30] [cursor=pointer]'
+            - 'button "Tema: dark" [ref=e37] [cursor=pointer]'
+            - 'button "Tema: system" [ref=e40] [cursor=pointer]'
+    - main [ref=e43]:
+      - generic [ref=e181]:
+        - link "Volver a la tienda" [ref=e182] [cursor=pointer]:
+          - /url: /tienda
+        - generic [ref=e185]:
+          - 'heading "Personalizar: Taza Minimal" [level=1] [ref=e186]'
+          - paragraph [ref=e187]: Los cambios se guardan automaticamente
+        - generic [ref=e188]:
+          - generic [ref=e189]: Agrega disenos arriba
+          - generic [ref=e191]:
+            - generic [ref=e192]:
+              - heading "Acabado" [level=3] [ref=e193]
+              - generic [ref=e194]:
+                - button "Artico" [ref=e195] [cursor=pointer]
+                - button "Sage" [ref=e197] [cursor=pointer]
+            - heading "Color de la taza" [level=3] [ref=e200]
+            - generic [ref=e202]:
+              - heading "Diseno" [level=3] [ref=e203]
+              - button "Subir imagen" [ref=e204] [cursor=pointer]
+              - generic [ref=e208]:
+                - button "Texto" [ref=e209] [cursor=pointer]
+                - button [ref=e211] [cursor=pointer]
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - generic [ref=e217]: Precio total
+                - generic [ref=e218]: $6.990
+              - paragraph [ref=e219]: Base $6.990
+              - button "Comprar" [ref=e221] [cursor=pointer]
+    - contentinfo [ref=e140]:
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e145]: ☕
+              - generic [ref=e146]: Tia Yami
+            - paragraph [ref=e147]: Ceramica artesanal personalizada. Disena tu taza unica con nosotros.
+          - generic [ref=e148]:
+            - heading "Tienda" [level=3] [ref=e149]
+            - list [ref=e150]:
+              - listitem [ref=e151]:
+                - link "Todas las tazas" [ref=e152] [cursor=pointer]:
+                  - /url: /tienda
+              - listitem [ref=e153]:
+                - link "Nuevos disenos" [ref=e154] [cursor=pointer]:
+                  - /url: /tienda
+          - generic [ref=e155]:
+            - heading "Ayuda" [level=3] [ref=e156]
+            - list [ref=e157]:
+              - listitem [ref=e158]:
+                - link "Contacto" [ref=e159] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e160]:
+                - link "Envios" [ref=e161] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e162]:
+                - link "Devoluciones" [ref=e163] [cursor=pointer]:
+                  - /url: /
+          - generic [ref=e164]:
+            - heading "Contacto" [level=3] [ref=e165]
+            - list [ref=e166]:
+              - listitem [ref=e167]: hola@tiayami.cl
+              - listitem [ref=e171]:
+                - link "@tiayami" [ref=e172] [cursor=pointer]:
+                  - /url: https://instagram.com/tiayami
+              - listitem [ref=e175]:
+                - link "Tia Yami Ceramica" [ref=e176] [cursor=pointer]:
+                  - /url: https://facebook.com/tiayami
+        - generic [ref=e179]: Tia Yami 2026 — Hecho con amor y ceramica

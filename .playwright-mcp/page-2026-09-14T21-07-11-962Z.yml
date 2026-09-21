@@ -1,0 +1,101 @@
+- generic [ref=f11e1]:
+  - button "Open Next.js Dev Tools" [ref=f11e7] [cursor=pointer]
+  - alert [ref=f11e11]
+  - region "Notificaciones"
+  - generic [ref=f11e12]:
+    - banner [ref=f11e13]:
+      - generic [ref=f11e15]:
+        - link "☕ Tia Yami" [ref=f11e16] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f11e17]: ☕
+          - generic [ref=f11e18]: Tia Yami
+        - navigation [ref=f11e19]:
+          - link "Inicio" [ref=f11e20] [cursor=pointer]:
+            - /url: /
+          - link "Tienda" [ref=f11e21] [cursor=pointer]:
+            - /url: /tienda
+          - link "Cuenta" [ref=f11e22] [cursor=pointer]:
+            - /url: /cuenta
+          - link "Carrito 2" [ref=f11e23] [cursor=pointer]:
+            - /url: /carrito
+            - generic [ref=f11e27]: Carrito
+            - generic [ref=f11e28]: "2"
+          - generic [ref=f11e29]:
+            - 'button "Tema: light" [ref=f11e30] [cursor=pointer]'
+            - 'button "Tema: dark" [ref=f11e37] [cursor=pointer]'
+            - 'button "Tema: system" [ref=f11e40] [cursor=pointer]'
+    - main [ref=f11e43]:
+      - generic [ref=f11e45]:
+        - link "Volver a la tienda" [ref=f11e46] [cursor=pointer]:
+          - /url: /tienda
+        - generic [ref=f11e49]:
+          - 'heading "Personalizar: Taza Clasica" [level=1] [ref=f11e50]'
+          - paragraph [ref=f11e51]: Los cambios se guardan automaticamente
+        - generic [ref=f11e52]:
+          - generic [ref=f11e54]:
+            - button "2D" [ref=f11e55] [cursor=pointer]
+            - button "3D" [active] [ref=f11e59] [cursor=pointer]
+          - generic [ref=f11e63]:
+            - generic [ref=f11e64]:
+              - heading "Acabado" [level=3] [ref=f11e65]
+              - generic [ref=f11e66]:
+                - button "Blanco mate" [ref=f11e67] [cursor=pointer]
+                - button "Terracota" [ref=f11e69] [cursor=pointer]
+            - heading "Color de la taza" [level=3] [ref=f11e72]
+            - generic [ref=f11e74]:
+              - heading "Diseno" [level=3] [ref=f11e75]
+              - generic [ref=f11e76]:
+                - generic [ref=f11e77]:
+                  - generic [ref=f11e78]: Grabado laser
+                  - generic [ref=f11e79]: Efecto de profundidad 3D
+                - checkbox "Grabado laser Efecto de profundidad 3D" [ref=f11e80]
+              - button "Subir imagen" [ref=f11e81] [cursor=pointer]
+              - generic [ref=f11e85]:
+                - button "Texto" [ref=f11e86] [cursor=pointer]
+                - button [ref=f11e88] [cursor=pointer]
+            - generic [ref=f11e92]:
+              - generic [ref=f11e93]:
+                - generic [ref=f11e94]: Precio total
+                - generic [ref=f11e95]: $8.490
+              - paragraph [ref=f11e96]: Base $8.490
+              - button "Comprar" [ref=f11e98] [cursor=pointer]
+    - contentinfo [ref=f11e102]:
+      - generic [ref=f11e103]:
+        - generic [ref=f11e104]:
+          - generic [ref=f11e105]:
+            - generic [ref=f11e106]:
+              - generic [ref=f11e107]: ☕
+              - generic [ref=f11e108]: Tia Yami
+            - paragraph [ref=f11e109]: Ceramica artesanal personalizada. Disena tu taza unica con nosotros.
+          - generic [ref=f11e110]:
+            - heading "Tienda" [level=3] [ref=f11e111]
+            - list [ref=f11e112]:
+              - listitem [ref=f11e113]:
+                - link "Todas las tazas" [ref=f11e114] [cursor=pointer]:
+                  - /url: /tienda
+              - listitem [ref=f11e115]:
+                - link "Nuevos disenos" [ref=f11e116] [cursor=pointer]:
+                  - /url: /tienda
+          - generic [ref=f11e117]:
+            - heading "Ayuda" [level=3] [ref=f11e118]
+            - list [ref=f11e119]:
+              - listitem [ref=f11e120]:
+                - link "Contacto" [ref=f11e121] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f11e122]:
+                - link "Envios" [ref=f11e123] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f11e124]:
+                - link "Devoluciones" [ref=f11e125] [cursor=pointer]:
+                  - /url: /
+          - generic [ref=f11e126]:
+            - heading "Contacto" [level=3] [ref=f11e127]
+            - list [ref=f11e128]:
+              - listitem [ref=f11e129]: hola@tiayami.cl
+              - listitem [ref=f11e133]:
+                - link "@tiayami" [ref=f11e134] [cursor=pointer]:
+                  - /url: https://instagram.com/tiayami
+              - listitem [ref=f11e137]:
+                - link "Tia Yami Ceramica" [ref=f11e138] [cursor=pointer]:
+                  - /url: https://facebook.com/tiayami
+        - generic [ref=f11e141]: Tia Yami 2026 — Hecho con amor y ceramica

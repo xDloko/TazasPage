@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useSupabase } from '@/components/providers/supabase-provider';
 import { useCart } from '@/components/providers/cart-provider';
+import { useToast } from '@/components/ui/use-toast';
 import { Product, ProductVariant } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { ShoppingBag, Search } from 'lucide-react';
@@ -15,6 +16,7 @@ type SupabaseProductRow = Product & { product_variants: ProductVariant[] };
 export default function TiendaPage() {
   const sb = useSupabase();
   const { addItem } = useCart();
+  const { toast } = useToast();
   const [products, setProducts] = useState<ProductWithVariants[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
@@ -42,19 +44,32 @@ export default function TiendaPage() {
     return matchesSearch && matchesColor && p.active;
   });
 
-  const handleQuickAdd = (e: React.MouseEvent, product: ProductWithVariants) => {
+  const handleQuickAdd = async (e: React.MouseEvent, product: ProductWithVariants) => {
     e.preventDefault();
     e.stopPropagation();
     const firstVariant = product.variants.find(v => v.active) ?? product.variants[0];
     if (firstVariant) {
-      addItem({
-        product_id: product.id,
-        variant_id: firstVariant.id,
-        qty: 1,
-        unit_price: product.base_price + (firstVariant.price_adj ?? 0),
-        name: product.name,
-        image_url: firstVariant.image_url ?? product.cover_image,
-      });
+      try {
+        await addItem({
+          product_id: product.id,
+          variant_id: firstVariant.id,
+          qty: 1,
+          unit_price: product.base_price + (firstVariant.price_adj ?? 0), // visual, will be overridden
+          name: product.name,
+          image_url: firstVariant.image_url ?? product.cover_image,
+        });
+        toast({
+          title: 'Agregado al carrito',
+          description: `${product.name} ahora está en tu carrito.`,
+        });
+      } catch (err) {
+        toast({
+          variant: 'destructive',
+          title: 'Error al agregar al carrito',
+          description: err instanceof Error ? err.message : 'No se pudo validar el precio.',
+        });
+        console.error('[tienda] No se pudo agregar al carrito:', err);
+      }
     }
   };
 

@@ -1,0 +1,99 @@
+- generic [active] [ref=f1e1]:
+  - button "Open Next.js Dev Tools" [ref=f1e7] [cursor=pointer]
+  - alert [ref=f1e11]
+  - region "Notificaciones"
+  - generic [ref=f1e12]:
+    - banner [ref=f1e13]:
+      - generic [ref=f1e15]:
+        - link "☕ Tia Yami" [ref=f1e16] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f1e17]: ☕
+          - generic [ref=f1e18]: Tia Yami
+        - navigation [ref=f1e19]:
+          - link "Inicio" [ref=f1e20] [cursor=pointer]:
+            - /url: /
+          - link "Tienda" [ref=f1e21] [cursor=pointer]:
+            - /url: /tienda
+          - link "Cuenta" [ref=f1e22] [cursor=pointer]:
+            - /url: /cuenta
+          - link "Carrito 1" [ref=f1e23] [cursor=pointer]:
+            - /url: /carrito
+            - generic [ref=f1e27]: Carrito
+            - generic [ref=f1e28]: "1"
+          - generic [ref=f1e29]:
+            - 'button "Tema: light" [ref=f1e30] [cursor=pointer]'
+            - 'button "Tema: dark" [ref=f1e37] [cursor=pointer]'
+            - 'button "Tema: system" [ref=f1e40] [cursor=pointer]'
+    - main [ref=f1e43]:
+      - main [ref=f1e44]:
+        - generic [ref=f1e50]:
+          - generic [ref=f1e51]:
+            - generic [ref=f1e52]: Ceramica artesanal
+            - heading "Tu taza, tu estilo" [level=1] [ref=f1e53]: Tu taza,tu estilo
+            - paragraph [ref=f1e54]: Disena y personaliza tu taza de ceramica unica. Elige color, agrega imagenes o texto, y crea algo que sea verdaderamente tuyo.
+            - generic [ref=f1e55]:
+              - link "Explorar tazas" [ref=f1e56] [cursor=pointer]:
+                - /url: /tienda
+              - link "Probar customizador" [ref=f1e59] [cursor=pointer]:
+                - /url: /tienda
+          - generic [ref=f1e63]: ☕
+        - generic [ref=f1e80]:
+          - heading "Tazas destacadas" [level=2] [ref=f1e81]
+          - paragraph [ref=f1e82]: Nuestra seleccion favorita para personalizar
+          - link "Ver todo el catalogo" [ref=f1e91] [cursor=pointer]:
+            - /url: /tienda
+        - generic [ref=f1e94]:
+          - generic [ref=f1e95]:
+            - heading "Personaliza" [level=3] [ref=f1e103]
+            - paragraph [ref=f1e104]: Elige color, sube tu imagen o usa IA para generar un diseno unico.
+          - generic [ref=f1e105]:
+            - heading "Calidad" [level=3] [ref=f1e110]
+            - paragraph [ref=f1e111]: Ceramica de alta calidad con acabados duraderos y colores vibrantes.
+          - generic [ref=f1e112]:
+            - heading "Envio rapido" [level=3] [ref=f1e119]
+            - paragraph [ref=f1e120]: Recibe tu taza personalizada en 3-5 dias habiles a todo Chile.
+        - generic [ref=f1e122]:
+          - heading "Listo para crear tu taza?" [level=2] [ref=f1e123]
+          - paragraph [ref=f1e124]: Empieza ahora y personaliza cada detalle. Desde el color hasta el diseno, tu taza sera unica.
+          - link "Empezar ahora" [ref=f1e125] [cursor=pointer]:
+            - /url: /tienda
+    - contentinfo [ref=f1e128]:
+      - generic [ref=f1e129]:
+        - generic [ref=f1e130]:
+          - generic [ref=f1e131]:
+            - generic [ref=f1e132]:
+              - generic [ref=f1e133]: ☕
+              - generic [ref=f1e134]: Tia Yami
+            - paragraph [ref=f1e135]: Ceramica artesanal personalizada. Disena tu taza unica con nosotros.
+          - generic [ref=f1e136]:
+            - heading "Tienda" [level=3] [ref=f1e137]
+            - list [ref=f1e138]:
+              - listitem [ref=f1e139]:
+                - link "Todas las tazas" [ref=f1e140] [cursor=pointer]:
+                  - /url: /tienda
+              - listitem [ref=f1e141]:
+                - link "Nuevos disenos" [ref=f1e142] [cursor=pointer]:
+                  - /url: /tienda
+          - generic [ref=f1e143]:
+            - heading "Ayuda" [level=3] [ref=f1e144]
+            - list [ref=f1e145]:
+              - listitem [ref=f1e146]:
+                - link "Contacto" [ref=f1e147] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f1e148]:
+                - link "Envios" [ref=f1e149] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f1e150]:
+                - link "Devoluciones" [ref=f1e151] [cursor=pointer]:
+                  - /url: /
+          - generic [ref=f1e152]:
+            - heading "Contacto" [level=3] [ref=f1e153]
+            - list [ref=f1e154]:
+              - listitem [ref=f1e155]: hola@tiayami.cl
+              - listitem [ref=f1e159]:
+                - link "@tiayami" [ref=f1e160] [cursor=pointer]:
+                  - /url: https://instagram.com/tiayami
+              - listitem [ref=f1e163]:
+                - link "Tia Yami Ceramica" [ref=f1e164] [cursor=pointer]:
+                  - /url: https://facebook.com/tiayami
+        - generic [ref=f1e167]: Tia Yami 2026 — Hecho con amor y ceramica

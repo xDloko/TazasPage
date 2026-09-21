@@ -28,11 +28,16 @@ const buttonLikeClasses: Record<string, string> = {
 export default function Home() {
   const sb = useSupabase();
   const [featured, setFeatured] = useState<ProductWithVariants[]>([]);
+  const [baseSlug, setBaseSlug] = useState<string | null>(null);
 
   useEffect(() => {
     sb.from('products').select('*, product_variants(*)').eq('active', true).limit(3).then(({ data }) => {
       const rows = (data as SupabaseProductRow[] | null) ?? [];
       setFeatured(rows.map(r => ({ ...r, variants: r.product_variants })));
+    });
+    // Resolve the demo product slug (first active product, used for "Probar customizador")
+    sb.from('products').select('slug').eq('active', true).order('base_price', { ascending: true }).limit(1).then(({ data }) => {
+      if (data && data.length > 0) setBaseSlug(data[0].slug);
     });
   }, [sb]);
 
@@ -62,7 +67,7 @@ export default function Home() {
                 <Link href="/tienda" className={buttonLikeClasses['lg-default']}>
                   Explorar tazas <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <Link href="/personalizar/demo" className={buttonLikeClasses['lg-outline']}>
+                <Link href={baseSlug ? `/personalizar/${baseSlug}` : '/tienda'} className={buttonLikeClasses['lg-outline']}>
                   <Sparkles className="mr-2 h-5 w-5" /> Probar customizador
                 </Link>
               </div>
@@ -114,7 +119,7 @@ export default function Home() {
                 >
                   <div className="aspect-square overflow-hidden rounded-2xl bg-slate-100 relative">
                     {p.cover_image ? (
-                      <Image src={p.cover_image} alt={p.name} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <Image src={p.cover_image} alt={p.name} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-300 group-hover:scale-105" />
                     ) : (
                       <div className="flex h-full items-center justify-center text-6xl">☕</div>
                     )}

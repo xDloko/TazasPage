@@ -5,19 +5,23 @@ import { notFound } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useSupabase } from '@/components/providers/supabase-provider';
 import { useCart } from '@/components/providers/cart-provider';
+import { useToast } from '@/components/ui/use-toast';
 import { Product, ProductVariant } from '@/lib/types';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ShoppingBag, Check } from 'lucide-react';
+import { ArrowLeft, ShoppingBag, Check, Edit3 } from 'lucide-react';
+import { PersonalizarModal } from '@/components/productos/PersonalizarModal';
 
 export default function ProductoPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
   const sb = useSupabase();
   const { addItem } = useCart();
+  const { toast } = useToast();
   const router = useRouter();
   const [product, setProduct] = useState<(Product & { variants: ProductVariant[] }) | null>(null);
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null);
   const [loading, setLoading] = useState(true);
   const [added, setAdded] = useState(false);
+  const [isCustomizing, setIsCustomizing] = useState(false);
 
   useEffect(() => {
     async function fetch() {
@@ -60,21 +64,40 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
 
   const price = product.base_price + (selectedVariant?.price_adj ?? 0);
 
-  const handleAdd = () => {
+  const handleAdd = async () => {
     if (!selectedVariant) return;
-    addItem({
-      product_id: product.id,
-      variant_id: selectedVariant.id,
-      qty: 1,
-      unit_price: price,
-      name: product.name,
-      image_url: selectedVariant.image_url ?? product.cover_image,
-    });
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1500);
+    try {
+      await addItem({
+        product_id: product.id,
+        variant_id: selectedVariant.id,
+        qty: 1,
+        unit_price: price, // precio visual; se sobreescribe con el real del servidor
+        name: product.name,
+        image_url: selectedVariant.image_url ?? product.cover_image,
+        note: null, // sin personalización
+      });
+      setAdded(true);
+      setTimeout(() => setAdded(false), 1500);
+      toast({
+        title: 'Agregado al carrito',
+        description: `${product.name} ahora está en tu carrito.`,
+      });
+    } catch (err) {
+      toast({
+        variant: 'destructive',
+        title: 'Error al agregar al carrito',
+        description: err instanceof Error ? err.message : 'No se pudo validar el precio.',
+      });
+      console.error('[producto] No se pudo agregar al carrito:', err);
+    }
+  };
+
+  const handleCustomizeAndAdd = () => {
+    setIsCustomizing(true);
   };
 
   return (
+    <>
     <div className="min-h-screen bg-bone dark:bg-slate-950">
       <div className="mx-auto max-w-6xl px-4 py-8">
         <Link href="/tienda" className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-terracotta dark:text-slate-400">
@@ -140,13 +163,22 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
               <Button size="lg" variant="outline" onClick={handleAdd} className="flex-1">
                 {added ? <><Check className="mr-2 h-5 w-5" /> Agregado</> : <><ShoppingBag className="mr-2 h-5 w-5" /> Agregar al carrito</>}
               </Button>
-              <Button size="lg" className="flex-1" onClick={() => router.push(`/personalizar/${product.id}`)}>
-                Personalizar ahora
+              <Button size="lg" className="flex-1" onClick={handleCustomizeAndAdd}>
+                Personalizar y añadir al carrito
               </Button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    {isCustomizing && (
+      <PersonalizarModal
+        open={isCustomizing}
+        onClose={() => setIsCustomizing(false)}
+        product={product}
+        variant={selectedVariant}
+      />
+    )}
+    </>
   );
 }
