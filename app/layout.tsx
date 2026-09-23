@@ -18,7 +18,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: 'TazasPage',
-  description: 'Personaliza tu taza de cerámica ideal y hazla única.',
+  description: 'Personaliza tazas de cerámica artesanal y recíbelas en cualquier lugar de Colombia.',
 };
 
 export default function RootLayout({

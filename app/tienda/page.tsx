@@ -81,7 +81,7 @@ export default function TiendaPage() {
             Tienda
           </h1>
           <p className="mt-2 text-lg text-slate-600 dark:text-slate-400">
-            Tazas de ceramica listas para personalizar
+            Tazas de cerámica artesanal listas para personalizar
           </p>
         </div>
 

@@ -11,17 +11,17 @@ const supabase = createClient<Database>(url, key);
 
 const PRODUCTS = [
   {
-    name: 'Taza Clasica',
+    name: 'Taza Clásica',
     slug: 'taza-clasica',
-    description: 'Taza de ceramica artesanal con acabado mate. Perfecta para el cafe de la manana.',
+    description: 'Taza de cerámica artesanal con acabado mate. Ideal para disfrutar el café de cada mañana.',
     base_price: 8990,
     cover_image: null,
     active: true,
   },
   {
-    name: 'Taza Rustica',
+    name: 'Taza Rústica',
     slug: 'taza-rustica',
-    description: 'Diseno rustico con textura natural. Cada pieza es unica por su acabado organico.',
+    description: 'Acabado rústico con textura natural. Cada pieza tiene detalles que la hacen especial.',
     base_price: 10990,
     cover_image: null,
     active: true,
@@ -29,7 +29,7 @@ const PRODUCTS = [
   {
     name: 'Taza Premium',
     slug: 'taza-premium',
-    description: 'Acabado brillante de alta calidad. La opcion mas elegante para regalar o coleccionar.',
+    description: 'Acabado brillante de alta calidad. Una opción elegante para regalar o coleccionar.',
     base_price: 14990,
     cover_image: null,
     active: true,
@@ -37,14 +37,14 @@ const PRODUCTS = [
 ];
 
 const VARIANTS = [
-  // Taza Clasica
-  { product_name: 'Taza Clasica', variants: [
+  // Taza Clásica
+  { product_name: 'Taza Clásica', variants: [
     { color_hex: '#F5F1EB', name: 'Hueso', price_adj: 0, stock: 20 },
     { color_hex: '#3B3B3B', name: 'Negro Mate', price_adj: 1000, stock: 15 },
     { color_hex: '#D06B4E', name: 'Terracota', price_adj: 1000, stock: 12 },
   ]},
-  // Taza Rustica
-  { product_name: 'Taza Rustica', variants: [
+  // Taza Rústica
+  { product_name: 'Taza Rústica', variants: [
     { color_hex: '#C4A882', name: 'Arena', price_adj: 0, stock: 10 },
     { color_hex: '#8B7355', name: 'Cafe', price_adj: 500, stock: 8 },
   ]},

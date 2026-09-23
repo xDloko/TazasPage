@@ -101,8 +101,8 @@ export default function CarritoPage() {
                   <span>${total.toLocaleString('es-CL')}</span>
                 </div>
                 <div className="flex justify-between text-sm text-slate-600 dark:text-slate-400">
-                  <span>Envio</span>
-                  <span className="text-green-600">Calculado en checkout</span>
+                  <span>Envío a todo Colombia</span>
+                  <span className="text-green-600">Sujeto a la dirección de entrega</span>
                 </div>
               </div>
               <div className="mt-4 border-t border-slate-200 pt-4 dark:border-slate-700">

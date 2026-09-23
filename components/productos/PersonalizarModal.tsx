@@ -59,7 +59,7 @@ export function PersonalizarModal({ open, onClose, product, variant }: Personali
       <div className="w-full max-w-md rounded-3xl bg-white p-6 shadow-xl dark:bg-slate-800">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
-            Personalizar y añadir al carrito
+            Deja una nota para tu taza
           </h2>
           <button onClick={onClose} className="rounded-full p-1 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700">
             <X className="h-5 w-5" />
@@ -67,7 +67,7 @@ export function PersonalizarModal({ open, onClose, product, variant }: Personali
         </div>
 
         <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
-          Describe brevemente cómo deseas personalizar esta taza. El fabricante se pondrá en contacto contigo para confirmar los detalles.
+          Déjanos una nota de cómo te gustaría tu taza y te contactamos para personalizarla por ti.
         </p>
 
         <div className="mt-4">
@@ -76,7 +76,7 @@ export function PersonalizarModal({ open, onClose, product, variant }: Personali
             id="customize-note"
             value={note}
             onChange={(e) => setNote(e.target.value)}
-            placeholder="Ej: Cambiar el diseño de flores por mariposas y usar colores pastel…"
+            placeholder="Ej: Quiero un diseño con flores y colores pastel…"
             rows={4}
             className="resize-none"
           />

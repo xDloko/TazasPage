@@ -6,7 +6,7 @@ import { useSupabase } from '@/components/providers/supabase-provider';
 import { useAuth } from '@/components/providers/auth-provider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { LogOut, Package, Palette, User, ChevronRight } from 'lucide-react';
+import { LogOut, Package, User, ChevronRight } from 'lucide-react';
 
 type Order = {
   id: string;
@@ -17,20 +17,11 @@ type Order = {
   order_items: { name: string; qty: number; unit_price: number }[];
 };
 
-type Design = {
-  id: string;
-  product_id: string;
-  layers: any;
-  updated_at: string;
-  products: { name: string; slug: string };
-};
-
 export default function CuentaPage() {
   const sb = useSupabase();
   const { user, isLoading: authLoading, signOut } = useAuth();
   const router = useRouter();
   const [orders, setOrders] = useState<Order[]>([]);
-  const [designs, setDesigns] = useState<Design[]>([]);
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState('');
   const [profileLoading, setProfileLoading] = useState(false);
@@ -45,8 +36,6 @@ export default function CuentaPage() {
     (async () => {
       const { data: o } = await sb.from('orders').select('*, order_items(*)').eq('user_id', user.id).order('created_at', { ascending: false });
       setOrders(o as Order[] ?? []);
-      const { data: d } = await sb.from('designs').select('*, products(name, slug)').eq('user_id', user.id).order('updated_at', { ascending: false });
-      setDesigns(d as Design[] ?? []);
     })();
   }, [sb, user]);
 
@@ -154,35 +143,6 @@ export default function CuentaPage() {
           )}
         </div>
 
-        {/* Saved designs */}
-        <div className="mt-8 rounded-3xl bg-white p-6 shadow-sm dark:bg-slate-800">
-          <h2 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-slate-100">
-            <Palette className="h-5 w-5" /> Disenos guardados
-          </h2>
-          {designs.length === 0 ? (
-            <p className="mt-4 text-slate-500">No tienes disenos guardados.</p>
-          ) : (
-            <div className="mt-4 space-y-3">
-              {designs.map(d => (
-                <Link
-                  key={d.id}
-                  href={`/personalizar/${d.product_id}`}
-                  className="flex items-center justify-between rounded-2xl border border-slate-100 p-3 hover:border-terracotta/50 dark:border-slate-700"
-                >
-                  <div>
-                    <p className="font-semibold text-slate-900 dark:text-slate-100">
-                      {d.products?.name ?? 'Producto'}
-                    </p>
-                    <p className="text-xs text-slate-400">
-                      {d.layers?.length ?? 0} capas · {new Date(d.updated_at ?? '').toLocaleDateString('es-CL')}
-                    </p>
-                  </div>
-                  <ChevronRight className="h-5 w-5 text-slate-400" />
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );

@@ -35,7 +35,7 @@ export default function SignUpPage() {
             Crear cuenta
           </h2>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            Unete para personalizar tus tazas
+            Unete para gestionar tus pedidos
           </p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">

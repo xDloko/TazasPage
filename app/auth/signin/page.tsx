@@ -36,7 +36,7 @@ export default function SignInPage() {
             Iniciar sesión
           </h2>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            Accede a tu cuenta para personalizar tus tazas
+            Accede a tu cuenta para gestionar tus pedidos
           </p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">

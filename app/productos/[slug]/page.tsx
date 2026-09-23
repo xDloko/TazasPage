@@ -164,7 +164,7 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
                 {added ? <><Check className="mr-2 h-5 w-5" /> Agregado</> : <><ShoppingBag className="mr-2 h-5 w-5" /> Agregar al carrito</>}
               </Button>
               <Button size="lg" className="flex-1" onClick={handleCustomizeAndAdd}>
-                Personalizar y añadir al carrito
+                Deja una nota
               </Button>
             </div>
           </div>

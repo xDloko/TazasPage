@@ -35,7 +35,7 @@ export default function Home() {
       const rows = (data as SupabaseProductRow[] | null) ?? [];
       setFeatured(rows.map(r => ({ ...r, variants: r.product_variants })));
     });
-    // Resolve the demo product slug (first active product, used for "Probar customizador")
+    // Resolve the demo product slug (first active product, used for the personalization CTA)
     sb.from('products').select('slug').eq('active', true).order('base_price', { ascending: true }).limit(1).then(({ data }) => {
       if (data && data.length > 0) setBaseSlug(data[0].slug);
     });
@@ -61,14 +61,14 @@ export default function Home() {
                 <span className="text-terracotta">tu estilo</span>
               </h1>
               <p className="mt-6 max-w-lg text-lg text-slate-600 dark:text-slate-400">
-                Disena y personaliza tu taza de ceramica unica. Elige color, agrega imagenes o texto, y crea algo que sea verdaderamente tuyo.
+                Diseña la taza de cerámica que imaginas. Comentanos como quieres tu taza Nosotros la hacemos.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/tienda" className={buttonLikeClasses['lg-default']}>
                   Explorar tazas <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
                 <Link href={baseSlug ? `/personalizar/${baseSlug}` : '/tienda'} className={buttonLikeClasses['lg-outline']}>
-                  <Sparkles className="mr-2 h-5 w-5" /> Probar customizador
+                  <Sparkles className="mr-2 h-5 w-5" /> Taza personalizada
                 </Link>
               </div>
             </div>
@@ -146,9 +146,9 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {[
-              { icon: Palette, title: 'Personaliza', desc: 'Elige color, sube tu imagen o usa IA para generar un diseno unico.' },
+              { icon: Palette, title: 'Personaliza', desc: 'Elige color, sube tu imagen o agrega texto para crear tu diseño.' },
               { icon: Sparkles, title: 'Calidad', desc: 'Ceramica de alta calidad con acabados duraderos y colores vibrantes.' },
-              { icon: Truck, title: 'Envio rapido', desc: 'Recibe tu taza personalizada en 3-5 dias habiles a todo Chile.' },
+              { icon: Truck, title: 'Envio rapido', desc: 'Recibe tu taza personalizada en 3-5 dias habiles a todo Colombia.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="rounded-3xl bg-slate-800/50 p-8 text-center backdrop-blur">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-terracotta/20">
@@ -169,7 +169,7 @@ export default function Home() {
             Listo para crear tu taza?
           </h2>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
-            Empieza ahora y personaliza cada detalle. Desde el color hasta el diseno, tu taza sera unica.
+            Empieza ahora y personaliza cada detalle. Desde el color hasta los acabados, Dinos tu taza tal como la imaginas.
           </p>
           <Link href="/tienda" className={`${buttonLikeClasses['lg-default']} mt-8`}>
               Empezar ahora <ArrowRight className="ml-2 h-5 w-5" />

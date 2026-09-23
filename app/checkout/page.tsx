@@ -140,18 +140,18 @@ export default function CheckoutPage() {
           <ArrowLeft className="h-4 w-4" /> Volver al carrito
         </Link>
 
-        <h1 className="mt-4 text-3xl font-bold text-slate-900 dark:text-slate-100">Checkout</h1>
+        <h1 className="mt-4 text-3xl font-bold text-slate-900 dark:text-slate-100">Finalizar compra</h1>
 
         <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div className="space-y-6 rounded-3xl bg-white p-6 shadow-sm dark:bg-slate-800">
-            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Datos de envio</h2>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Datos de envío</h2>
             <div>
-              <Label htmlFor="address">Direccion de envio</Label>
+              <Label htmlFor="address">Dirección de entrega</Label>
               <Textarea
                 id="address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                placeholder="Calle, numero, ciudad, codigo postal..."
+                placeholder="Calle, número, ciudad y referencias..."
                 rows={3}
                 required
               />
