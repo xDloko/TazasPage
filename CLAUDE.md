@@ -12,7 +12,7 @@ The project is currently in the **implementation phase** with a functional Next.
 - ✅ Supabase integration for authentication, database, and storage
 - ✅ Tailwind CSS with custom terracotta/bone color scheme
 - ✅ Product catalog, shopping cart, and checkout flow
-- ✅ Product customization interface (colors, text, images, engraving)
+- ✅ Product customization interface (text only, engraving option)
 - ✅ Protected routes (/checkout, /cuenta) with middleware
 - ✅ Responsive design with dark mode support
 - ✅ Custom UI components library (buttons, inputs, etc.)

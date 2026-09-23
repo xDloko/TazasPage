@@ -14,8 +14,6 @@ export type Database = {
           created_at: string | null;
           engraving: boolean;
           id: string;
-          layers: Json;
-          preview_image: string | null;
           product_id: string;
           updated_at: string | null;
           user_id: string;
@@ -25,8 +23,6 @@ export type Database = {
           created_at?: string | null;
           engraving?: boolean;
           id?: string;
-          layers?: Json;
-          preview_image?: string | null;
           product_id: string;
           updated_at?: string | null;
           user_id: string;
@@ -36,8 +32,6 @@ export type Database = {
           created_at?: string | null;
           engraving?: boolean;
           id?: string;
-          layers?: Json;
-          preview_image?: string | null;
           product_id?: string;
           updated_at?: string | null;
           user_id?: string;
