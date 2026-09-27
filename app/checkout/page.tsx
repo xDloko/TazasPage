@@ -80,9 +80,9 @@ export default function CheckoutPage() {
         throw new Error('Sesión inválida o expirada. Por favor inicia sesión nuevamente.');
       }
 
-      // 3. Obtener JWT para enviar a la Edge Function
-      const { data: { session } } = await sb.auth.getSession();
-      const jwt = session?.access_token;
+      // 3. Obtener JWT para enviar a la Edge Function.
+      // getUser() ya devuelve el access_token en el objeto user verificado.
+      const jwt = user.access_token;
 
       if (!jwt) {
         throw new Error('No se pudo obtener el token de autenticación');

@@ -33,11 +33,11 @@ Estado: 2026-09-23 · Prioridad: alta y media
   - [x] P2.6 — Eliminar Edge Function `upload-design-image` (código muerto). **Hecho** (borrado del directorio).
   - [ ] P2.7 — Probar flujo de compra solo con nota de personalización.
 
-- [ ] **P3 — Admin/CRUD básico**
-  - [ ] P3.1 — Crear rutas `/admin` protegidas con middleware.
-  - [ ] P3.2 — CRUD de productos y variantes.
-  - [ ] P3.3 — Gestión de órdenes (estado, detalle).
-  - [ ] P3.4 — Gestión de usuarios (rol, estado).
+- [x] **P3 — Admin/CRUD básico** ✅ Completado 2026-09-25
+  - [x] P3.1 — Crear rutas `/admin` protegidas con middleware. **Hecho** — `proxy.ts` middleware con verificación de rol admin; `app/admin/layout.tsx` con `AdminNav` de cliente (usePathname para tabs activos).
+  - [x] P3.2 — CRUD de productos y variantes. **Hecho** — `app/admin/products/page.tsx` con create/edit/delete de productos y variantes (insert/update/delete). Verificado con pruebas E2E Playwright: crear, leer (6 productos), editar, eliminar (persistencia tras recarga), variantes CRUD.
+  - [x] P3.3 — Gestión de órdenes (estado, detalle). **Hecho** — `app/admin/orders/page.tsx` muestra todos los pedidos con estado; 0 pedidos registrados al momento de la prueba.
+  - [x] P3.4 — Gestión de usuarios (rol, estado). **Hecho** — `app/admin/users/page.tsx` muestra usuarios registrados con selector de rol (Cliente/Administrador). 1 usuario admin verificado.
   - [ ] P3.5 — Banner/promociones del homepage (fase futura, dejar tarea preparada).
 
 ### 🟠 Media prioridad

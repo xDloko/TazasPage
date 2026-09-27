@@ -162,8 +162,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       loadingFromServerRef.current = true;
       try {
         if (user) {
-          const { data: { session } } = await sb.auth.getSession();
-          const accessToken = session?.access_token;
+          // getUser() verifica la autenticidad y devuelve access_token.
+          // No uses getSession() aquí: datos del almacenamiento pueden ser manipulados.
+          const { data: { user: verifiedUser } } = await sb.auth.getUser();
+          const accessToken = verifiedUser?.access_token;
           const { data, error } = await fetch(
             `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/get-cart`,
             {
@@ -217,8 +219,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (syncTimer.current) clearTimeout(syncTimer.current);
       syncTimer.current = setTimeout(async () => {
         try {
-          const { data: { session } } = await sb.auth.getSession();
-          const accessToken = session?.access_token;
+          // getUser() verifica la autenticidad y devuelve access_token.
+          const { data: { user: verifiedUser } } = await sb.auth.getUser();
+          const accessToken = verifiedUser?.access_token;
           await fetch(
             `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/sync-cart`,
             {

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCart } from '@/components/providers/cart-provider';
+import { useAuth } from '@/components/providers/auth-provider';
 import { Menu, X, ShoppingBag, Sun, Moon, Laptop } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -11,12 +12,18 @@ export function SiteHeader() {
   const { count } = useCart();
   const { theme, setTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { user, isLoading } = useAuth();
 
   const nav = [
     { href: '/', label: 'Inicio' },
     { href: '/tienda', label: 'Tienda' },
     { href: '/cuenta', label: 'Cuenta' },
+    ...(user?.role === 'admin' ? [{ href: '/admin', label: 'Admin' }] : []),
   ];
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-md dark:border-slate-700 dark:bg-slate-900/80">
@@ -36,7 +43,11 @@ export function SiteHeader() {
                 key={n.href}
                 href={n.href}
                 className={`text-sm font-semibold transition-colors ${
-                  pathname === n.href
+                  n.href === '/admin'
+                    ? pathname.startsWith('/admin')
+                      ? 'text-terracotta'
+                      : 'text-slate-600 hover:text-terracotta dark:text-slate-300'
+                    : pathname === n.href
                     ? 'text-terracotta'
                     : 'text-slate-600 hover:text-terracotta dark:text-slate-300'
                 }`}

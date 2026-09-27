@@ -239,6 +239,9 @@ export type TablesUpdate<T extends keyof Database['public']['Tables']> =
 
 export type Product = Tables<'products'>;
 export type ProductVariant = Tables<'product_variants'>;
+export type ProductWithVariants = Product & {
+  product_variants?: ProductVariant[];
+};
 export type Profile = Tables<'profiles'>;
 export type Design = Tables<'designs'>;
 export type Order = Tables<'orders'>;

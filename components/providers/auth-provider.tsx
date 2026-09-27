@@ -2,6 +2,10 @@
 import { createContext, useContext, useEffect, useState, useCallback } from 'react';
 import { useSupabase } from './supabase-provider';
 import { useRouter } from 'next/navigation';
+import { createBrowserClient } from '@supabase/ssr';
+
+// Helper to get the Supabase client type
+type SupabaseClient = ReturnType<typeof createBrowserClient>;
 
 // Tipo del user_metadata que Supabase expone en el JWT
 interface UserMetadata {
@@ -32,15 +36,24 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-// Extrae un AuthUser desde la sesión de Supabase de forma tipada
-function userFromSession(session: { user: { id: string; email?: string | null; user_metadata?: unknown } }): AuthUser {
-  const meta = (session.user.user_metadata ?? {}) as UserMetadata;
+// Construye un AuthUser a partir de un usuario verificado por getUser().
+// getUser() contacta al servidor de Supabase Auth → autenticidad garantizada.
+async function userFromVerifiedUser(user: { id: string; email?: string | null; user_metadata?: unknown }, sb: SupabaseClient): Promise<AuthUser> {
+  const meta = (user.user_metadata ?? {}) as UserMetadata;
+
+  // Fetch role from profiles table
+  let role = 'customer'; // default role
+  const { data: profile, error } = await sb.from('profiles').select('role').eq('id', user.id).single();
+  if (!error && profile?.role) {
+    role = profile.role;
+  }
+
   return {
-    id: session.user.id,
-    email: session.user.email ?? null,
+    id: user.id,
+    email: user.email ?? null,
     name: meta.full_name ?? null,
     avatar_url: meta.avatar_url ?? null,
-    role: 'customer',
+    role,
   };
 }
 
@@ -56,13 +69,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     async function init() {
       try {
-        const { data, error: sessionError } = await sb.auth.getSession();
-        if (sessionError) {
-          throw new Error(sessionError.message || 'No se pudo obtener la sesión');
+        // getUser() verifica la autenticidad del JWT contactando al servidor de Supabase Auth.
+        // No uses getSession() aquí: los datos de la cookie pueden ser manipulados.
+        const { data: { user }, error: userError } = await sb.auth.getUser();
+        if (userError) {
+          throw new Error(userError.message || 'No se pudo verificar la sesión');
         }
 
         if (mounted) {
-          setUser(data.session ? userFromSession(data.session) : null);
+          setUser(user ? await userFromVerifiedUser(user, sb) : null);
           setIsLoading(false);
         }
       } catch (err) {
@@ -76,8 +91,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     init();
 
-    const { data: { subscription } } = sb.auth.onAuthStateChange((_event, session) => {
-      setUser(session ? userFromSession(session) : null);
+    const { data: { subscription } } = sb.auth.onAuthStateChange(async (_event, _session) => {
+      // No confiar en _session del evento: viene del almacenamiento local.
+      // Verificar con getUser() contacta al servidor de Supabase Auth.
+      const { data: { user } } = await sb.auth.getUser();
+      setUser(user ? await userFromVerifiedUser(user, sb) : null);
       setIsLoading(false);
     });
 

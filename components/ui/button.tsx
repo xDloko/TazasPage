@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 
-type Variant = 'default' | 'outline' | 'ghost' | 'secondary';
+type Variant = 'default' | 'outline' | 'ghost' | 'secondary' | 'destructive';
 type Size = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -23,6 +23,7 @@ const variantClasses: Record<Variant, string> = {
   outline: 'border-2 border-terracotta text-terracotta hover:bg-terracotta/10',
   ghost: 'text-terracotta hover:bg-terracotta/10',
   secondary: 'bg-slate-200 text-slate-800 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-100',
+  destructive: 'bg-red-600 text-white hover:bg-red-700 shadow-sm',
 };
 
 const sizeClasses: Record<Size, string> = {
