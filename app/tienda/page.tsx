@@ -1,13 +1,13 @@
-'use client';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useSupabase } from '@/components/providers/supabase-provider';
-import { useCart } from '@/components/providers/cart-provider';
-import { useToast } from '@/components/ui/use-toast';
-import { Product, ProductVariant } from '@/lib/types';
-import { Button } from '@/components/ui/button';
-import { ShoppingBag, Search } from 'lucide-react';
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useSupabase } from "@/components/providers/supabase-provider";
+import { useCart } from "@/components/providers/cart-provider";
+import { useToast } from "@/components/ui/use-toast";
+import { Product, ProductVariant } from "@/lib/types";
+import { Button } from "@/components/ui/button";
+import { ShoppingBag, Search } from "lucide-react";
 
 // Tipo para el resultado de Supabase con la relación product_variants
 type ProductWithVariants = Product & { variants: ProductVariant[] };
@@ -19,35 +19,44 @@ export default function TiendaPage() {
   const { toast } = useToast();
   const [products, setProducts] = useState<ProductWithVariants[]>([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState('');
-  const [filterColor, setFilterColor] = useState<string>('all');
+  const [search, setSearch] = useState("");
+  const [filterColor, setFilterColor] = useState<string>("all");
 
   useEffect(() => {
     let cancelled = false;
     async function fetchProducts() {
-      const { data } = await sb.from('products').select('*, product_variants(*)').eq('active', true).order('name');
+      const { data } = await sb
+        .from("products")
+        .select("*, product_variants(*)")
+        .eq("active", true)
+        .order("name");
       if (cancelled) return;
       const rows = (data as SupabaseProductRow[] | null) ?? [];
-      setProducts(rows.map(r => ({ ...r, variants: r.product_variants })));
+      setProducts(rows.map((r) => ({ ...r, variants: r.product_variants })));
       setLoading(false);
     }
     fetchProducts();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const allColors = Array.from(new Set(products.flatMap(p => p.variants.map(v => v.color_hex))));
+  const allColors = Array.from(
+    new Set(products.flatMap((p) => p.variants.map((v) => v.color_hex)))
+  );
 
-  const filtered = products.filter(p => {
+  const filtered = products.filter((p) => {
     const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
-    const matchesColor = filterColor === 'all' || p.variants.some(v => v.color_hex === filterColor);
+    const matchesColor =
+      filterColor === "all" || p.variants.some((v) => v.color_hex === filterColor);
     return matchesSearch && matchesColor && p.active;
   });
 
   const handleQuickAdd = async (e: React.MouseEvent, product: ProductWithVariants) => {
     e.preventDefault();
     e.stopPropagation();
-    const firstVariant = product.variants.find(v => v.active) ?? product.variants[0];
+    const firstVariant = product.variants.find((v) => v.active) ?? product.variants[0];
     if (firstVariant) {
       try {
         await addItem({
@@ -59,16 +68,16 @@ export default function TiendaPage() {
           image_url: firstVariant.image_url ?? product.cover_image,
         });
         toast({
-          title: 'Agregado al carrito',
+          title: "Agregado al carrito",
           description: `${product.name} ahora está en tu carrito.`,
         });
       } catch (err) {
         toast({
-          variant: 'destructive',
-          title: 'Error al agregar al carrito',
-          description: err instanceof Error ? err.message : 'No se pudo validar el precio.',
+          variant: "destructive",
+          title: "Error al agregar al carrito",
+          description: err instanceof Error ? err.message : "No se pudo validar el precio.",
         });
-        console.error('[tienda] No se pudo agregar al carrito:', err);
+        console.error("[tienda] No se pudo agregar al carrito:", err);
       }
     }
   };
@@ -98,27 +107,33 @@ export default function TiendaPage() {
           </div>
           <div className="flex gap-2 flex-wrap">
             <button
-              onClick={() => setFilterColor('all')}
+              onClick={() => setFilterColor("all")}
               className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
-                filterColor === 'all'
-                  ? 'bg-terracotta text-white'
-                  : 'bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300'
+                filterColor === "all"
+                  ? "bg-terracotta text-white"
+                  : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300"
               }`}
             >
               Todas
             </button>
-            {allColors.map(color => (
+            {allColors.map((color) => (
               <button
                 key={color}
                 onClick={() => setFilterColor(color)}
-                className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
+                className={`group relative rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
                   filterColor === color
-                    ? 'bg-terracotta text-white'
-                    : 'bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300'
+                    ? "bg-terracotta text-white"
+                    : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300"
                 }`}
-                style={{ borderLeft: `3px solid ${color}` }}
+                title={color}
               >
-                {color}
+                <span className="flex items-center gap-2">
+                  <span
+                    className="h-4 w-4 rounded-full border border-slate-300 dark:border-slate-600"
+                    style={{ backgroundColor: color }}
+                  />
+                  <span className="hidden group-hover:inline">{color}</span>
+                </span>
               </button>
             ))}
           </div>
@@ -138,7 +153,7 @@ export default function TiendaPage() {
           <p className="text-center text-lg text-slate-500">No se encontraron productos</p>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map(product => {
+            {filtered.map((product) => {
               const basePrice = product.base_price;
               return (
                 <Link
@@ -146,18 +161,17 @@ export default function TiendaPage() {
                   href={`/productos/${product.slug}`}
                   className="group rounded-3xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-800"
                 >
-                  <div className="aspect-square overflow-hidden rounded-2xl bg-slate-100 relative">
+                  <div className="aspect-square min-h-[200px] overflow-hidden rounded-2xl bg-slate-100 relative">
                     {product.cover_image ? (
                       <Image
                         src={product.cover_image}
                         alt={product.name}
                         fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="flex h-full items-center justify-center text-4xl">
-                        ☕
-                      </div>
+                      <div className="flex h-full items-center justify-center text-4xl">☕</div>
                     )}
                   </div>
                   <div className="mt-4">
@@ -169,7 +183,7 @@ export default function TiendaPage() {
                     </p>
                     <div className="mt-3 flex items-center justify-between">
                       <span className="text-xl font-bold text-terracotta">
-                        Desde ${basePrice.toLocaleString('es-CL')}
+                        Desde ${basePrice.toLocaleString("es-CL")}
                       </span>
                       <Button
                         size="sm"

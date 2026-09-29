@@ -1,28 +1,28 @@
-'use client';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useSupabase } from '@/components/providers/supabase-provider';
-import { Product, ProductVariant } from '@/lib/types';
-import { ArrowRight, Sparkles, Truck, Palette, Heart } from 'lucide-react';
-import { useEffect, useState } from 'react';
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+import { useSupabase } from "@/components/providers/supabase-provider";
+import { Product, ProductVariant } from "@/lib/types";
+import { ArrowRight, Sparkles, Truck, Palette, Heart } from "lucide-react";
+import { useEffect, useState } from "react";
 
 type ProductWithVariants = Product & { variants: ProductVariant[] };
 type SupabaseProductRow = Product & { product_variants: ProductVariant[] };
 
 /* Decorator-only classes applied to <Link> when it replaces a Button */
 const buttonLikeClasses: Record<string, string> = {
-  'lg-default':
-    'inline-flex items-center justify-center rounded-2xl px-8 text-lg font-semibold bg-terracotta text-white shadow-sm active:scale-[0.97]',
-  'lg-outline':
-    'inline-flex items-center justify-center rounded-2xl px-8 text-lg font-semibold border-2 border-terracotta text-terracotta hover:bg-terracotta/10 active:scale-[0.97]',
-  'lg-secondary':
-    'inline-flex items-center justify-center rounded-2xl px-8 text-lg font-semibold bg-slate-200 text-slate-800 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-100 active:scale-[0.97]',
-  'md-outline':
-    'inline-flex items-center justify-center rounded-2xl px-5 text-base font-semibold border-2 border-terracotta text-terracotta hover:bg-terracotta/10 active:scale-[0.97]',
-  'md-default':
-    'inline-flex items-center justify-center rounded-2xl px-5 text-base font-semibold bg-terracotta text-white shadow-sm active:scale-[0.97]',
-  'sm-outline':
-    'inline-flex items-center justify-center rounded-2xl px-3 text-sm font-semibold border-2 border-terracotta text-terracotta hover:bg-terracotta/10 active:scale-[0.97]',
+  "lg-default":
+    "inline-flex items-center justify-center rounded-2xl px-8 text-lg font-semibold bg-terracotta text-white shadow-sm active:scale-[0.97]",
+  "lg-outline":
+    "inline-flex items-center justify-center rounded-2xl px-8 text-lg font-semibold border-2 border-terracotta text-terracotta hover:bg-terracotta/10 active:scale-[0.97]",
+  "lg-secondary":
+    "inline-flex items-center justify-center rounded-2xl px-8 text-lg font-semibold bg-slate-200 text-slate-800 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-100 active:scale-[0.97]",
+  "md-outline":
+    "inline-flex items-center justify-center rounded-2xl px-5 text-base font-semibold border-2 border-terracotta text-terracotta hover:bg-terracotta/10 active:scale-[0.97]",
+  "md-default":
+    "inline-flex items-center justify-center rounded-2xl px-5 text-base font-semibold bg-terracotta text-white shadow-sm active:scale-[0.97]",
+  "sm-outline":
+    "inline-flex items-center justify-center rounded-2xl px-3 text-sm font-semibold border-2 border-terracotta text-terracotta hover:bg-terracotta/10 active:scale-[0.97]",
 };
 
 export default function Home() {
@@ -31,14 +31,23 @@ export default function Home() {
   const [baseSlug, setBaseSlug] = useState<string | null>(null);
 
   useEffect(() => {
-    sb.from('products').select('*, product_variants(*)').eq('active', true).limit(3).then(({ data }) => {
-      const rows = (data as SupabaseProductRow[] | null) ?? [];
-      setFeatured(rows.map(r => ({ ...r, variants: r.product_variants })));
-    });
+    sb.from("products")
+      .select("*, product_variants(*)")
+      .eq("active", true)
+      .limit(3)
+      .then(({ data }) => {
+        const rows = (data as SupabaseProductRow[] | null) ?? [];
+        setFeatured(rows.map((r) => ({ ...r, variants: r.product_variants })));
+      });
     // Resolve the demo product slug (first active product, used for the personalization CTA)
-    sb.from('products').select('slug').eq('active', true).order('base_price', { ascending: true }).limit(1).then(({ data }) => {
-      if (data && data.length > 0) setBaseSlug(data[0].slug);
-    });
+    sb.from("products")
+      .select("slug")
+      .eq("active", true)
+      .order("base_price", { ascending: true })
+      .limit(1)
+      .then(({ data }) => {
+        if (data && data.length > 0) setBaseSlug(data[0].slug);
+      });
   }, [sb]);
 
   return (
@@ -61,13 +70,17 @@ export default function Home() {
                 <span className="text-terracotta">tu estilo</span>
               </h1>
               <p className="mt-6 max-w-lg text-lg text-slate-600 dark:text-slate-400">
-                Diseña la taza de cerámica que imaginas. Comentanos como quieres tu taza Nosotros la hacemos.
+                Diseña la taza de cerámica que imaginas. Comentanos como quieres tu taza Nosotros la
+                hacemos.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/tienda" className={buttonLikeClasses['lg-default']}>
+                <Link href="/tienda" className={buttonLikeClasses["lg-default"]}>
                   Explorar tazas <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <Link href={baseSlug ? `/personalizar/${baseSlug}` : '/tienda'} className={buttonLikeClasses['lg-outline']}>
+                <Link
+                  href={baseSlug ? `/personalizar/${baseSlug}` : "/tienda"}
+                  className={buttonLikeClasses["lg-outline"]}
+                >
                   <Sparkles className="mr-2 h-5 w-5" /> Taza personalizada
                 </Link>
               </div>
@@ -102,8 +115,11 @@ export default function Home() {
           </p>
           {featured.length === 0 ? (
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3].map(i => (
-                <div key={i} className="animate-pulse rounded-3xl bg-slate-100 p-4 dark:bg-slate-800">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="animate-pulse rounded-3xl bg-slate-100 p-4 dark:bg-slate-800"
+                >
                   <div className="aspect-square rounded-2xl bg-slate-200 dark:bg-slate-700" />
                   <div className="mt-4 h-6 w-2/3 rounded bg-slate-200 dark:bg-slate-700" />
                 </div>
@@ -111,30 +127,38 @@ export default function Home() {
             </div>
           ) : (
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {featured.map(p => (
+              {featured.map((p) => (
                 <Link
                   key={p.id}
                   href={`/productos/${p.slug}`}
                   className="group rounded-3xl bg-slate-50 p-4 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-800"
                 >
-                  <div className="aspect-square overflow-hidden rounded-2xl bg-slate-100 relative">
+                  <div className="aspect-square min-h-[300px] overflow-hidden rounded-2xl bg-slate-100 relative">
                     {p.cover_image ? (
-                      <Image src={p.cover_image} alt={p.name} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <Image
+                        src={p.cover_image}
+                        alt={p.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
                     ) : (
                       <div className="flex h-full items-center justify-center text-6xl">☕</div>
                     )}
                   </div>
-                  <h3 className="mt-4 text-lg font-bold text-slate-900 dark:text-slate-100">{p.name}</h3>
+                  <h3 className="mt-4 text-lg font-bold text-slate-900 dark:text-slate-100">
+                    {p.name}
+                  </h3>
                   <p className="mt-1 text-sm text-slate-500 line-clamp-2">{p.description}</p>
                   <p className="mt-3 text-lg font-bold text-terracotta">
-                    ${p.base_price.toLocaleString('es-CL')}
+                    ${p.base_price.toLocaleString("es-CL")}
                   </p>
                 </Link>
               ))}
             </div>
           )}
           <div className="mt-8 text-center">
-            <Link href="/tienda" className={buttonLikeClasses['lg-outline']}>
+            <Link href="/tienda" className={buttonLikeClasses["lg-outline"]}>
               Ver todo el catalogo
             </Link>
           </div>
@@ -146,11 +170,26 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {[
-              { icon: Palette, title: 'Personaliza', desc: 'Elige color, sube tu imagen o agrega texto para crear tu diseño.' },
-              { icon: Sparkles, title: 'Calidad', desc: 'Ceramica de alta calidad con acabados duraderos y colores vibrantes.' },
-              { icon: Truck, title: 'Envio rapido', desc: 'Recibe tu taza personalizada en 3-5 dias habiles a todo Colombia.' },
+              {
+                icon: Palette,
+                title: "Personaliza",
+                desc: "Elige color, sube tu imagen o agrega texto para crear tu diseño.",
+              },
+              {
+                icon: Sparkles,
+                title: "Calidad",
+                desc: "Ceramica de alta calidad con acabados duraderos y colores vibrantes.",
+              },
+              {
+                icon: Truck,
+                title: "Envio rapido",
+                desc: "Recibe tu taza personalizada en 3-5 dias habiles a todo Colombia.",
+              },
             ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="rounded-3xl bg-slate-800/50 p-8 text-center backdrop-blur">
+              <div
+                key={title}
+                className="rounded-3xl bg-slate-800/50 p-8 text-center backdrop-blur"
+              >
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-terracotta/20">
                   <Icon className="h-6 w-6 text-terracotta" />
                 </div>
@@ -169,11 +208,12 @@ export default function Home() {
             Listo para crear tu taza?
           </h2>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
-            Empieza ahora y personaliza cada detalle. Desde el color hasta los acabados, Dinos tu taza tal como la imaginas.
+            Empieza ahora y personaliza cada detalle. Desde el color hasta los acabados, Dinos tu
+            taza tal como la imaginas.
           </p>
-          <Link href="/tienda" className={`${buttonLikeClasses['lg-default']} mt-8`}>
-              Empezar ahora <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+          <Link href="/tienda" className={`${buttonLikeClasses["lg-default"]} mt-8`}>
+            Empezar ahora <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </div>
       </section>
     </main>

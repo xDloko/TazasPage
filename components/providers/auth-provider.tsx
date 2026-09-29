@@ -1,8 +1,8 @@
-'use client';
-import { createContext, useContext, useEffect, useState, useCallback } from 'react';
-import { useSupabase } from './supabase-provider';
-import { useRouter } from 'next/navigation';
-import { createBrowserClient } from '@supabase/ssr';
+"use client";
+import { createContext, useContext, useEffect, useState, useCallback } from "react";
+import { useSupabase } from "./supabase-provider";
+import { useRouter } from "next/navigation";
+import { createBrowserClient } from "@supabase/ssr";
 
 // Helper to get the Supabase client type
 type SupabaseClient = ReturnType<typeof createBrowserClient>;
@@ -38,12 +38,19 @@ const AuthContext = createContext<AuthContextType | null>(null);
 
 // Construye un AuthUser a partir de un usuario verificado por getUser().
 // getUser() contacta al servidor de Supabase Auth → autenticidad garantizada.
-async function userFromVerifiedUser(user: { id: string; email?: string | null; user_metadata?: unknown }, sb: SupabaseClient): Promise<AuthUser> {
+async function userFromVerifiedUser(
+  user: { id: string; email?: string | null; user_metadata?: unknown },
+  sb: SupabaseClient
+): Promise<AuthUser> {
   const meta = (user.user_metadata ?? {}) as UserMetadata;
 
   // Fetch role from profiles table
-  let role = 'customer'; // default role
-  const { data: profile, error } = await sb.from('profiles').select('role').eq('id', user.id).single();
+  let role = "customer"; // default role
+  const { data: profile, error } = await sb
+    .from("profiles")
+    .select("role")
+    .eq("id", user.id)
+    .single();
   if (!error && profile?.role) {
     role = profile.role;
   }
@@ -71,9 +78,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       try {
         // getUser() verifica la autenticidad del JWT contactando al servidor de Supabase Auth.
         // No uses getSession() aquí: los datos de la cookie pueden ser manipulados.
-        const { data: { user }, error: userError } = await sb.auth.getUser();
+        const {
+          data: { user },
+          error: userError,
+        } = await sb.auth.getUser();
         if (userError) {
-          throw new Error(userError.message || 'No se pudo verificar la sesión');
+          throw new Error(userError.message || "No se pudo verificar la sesión");
         }
 
         if (mounted) {
@@ -84,17 +94,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (mounted) {
           setUser(null);
           setIsLoading(false);
-          setError(err instanceof Error ? err.message : 'Error desconocido al inicializar sesión');
+          setError(err instanceof Error ? err.message : "Error desconocido al inicializar sesión");
         }
       }
     }
 
     init();
 
-    const { data: { subscription } } = sb.auth.onAuthStateChange(async (_event, _session) => {
+    const {
+      data: { subscription },
+    } = sb.auth.onAuthStateChange(async (_event, _session) => {
       // No confiar en _session del evento: viene del almacenamiento local.
       // Verificar con getUser() contacta al servidor de Supabase Auth.
-      const { data: { user } } = await sb.auth.getUser();
+      const {
+        data: { user },
+      } = await sb.auth.getUser();
       setUser(user ? await userFromVerifiedUser(user, sb) : null);
       setIsLoading(false);
     });
@@ -107,63 +121,83 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const clearError = useCallback(() => setError(null), []);
 
-  const signIn = useCallback(async (_email: string, _password: string) => {
-    setError(null);
-    const { error: signInError } = await sb.auth.signInWithPassword({ email: _email, password: _password });
-    if (signInError) {
-      // General error message to prevent account enumeration via error messages
-      const message = 'Credenciales incorrectas. Por favor verifica tu email y contraseña.';
-      setError(message);
-      throw new Error(message);
-    }
-  }, [sb]);
+  const signIn = useCallback(
+    async (_email: string, _password: string) => {
+      setError(null);
+      const { error: signInError } = await sb.auth.signInWithPassword({
+        email: _email,
+        password: _password,
+      });
+      if (signInError) {
+        // General error message to prevent account enumeration via error messages
+        const message = "Credenciales incorrectas. Por favor verifica tu email y contraseña.";
+        setError(message);
+        throw new Error(message);
+      }
+      // Refresh the router so server-side auth state (cookies) is synced
+      // before the caller navigates away. Without this the redirect lands on
+      // a page that still sees the user as unauthenticated.
+      router.refresh();
+    },
+    [sb, router]
+  );
 
-  const signUp = useCallback(async (_email: string, _password: string, name: string) => {
-    setError(null);
-    const { error: signUpError } = await sb.auth.signUp({
-      email: _email,
-      password: _password,
-      options: { data: { full_name: name, avatar_url: null } },
-    });
-    if (signUpError) {
-      // Generic error message to prevent account enumeration
-      // Supabase may return "User already registered" which reveals email existence
-      const message = 'No se pudo crear la cuenta. Inténtalo de nuevo más tarde.';
-      setError(message);
-      throw new Error(message);
-    }
-  }, [sb]);
+  const signUp = useCallback(
+    async (_email: string, _password: string, name: string) => {
+      setError(null);
+      const { error: signUpError } = await sb.auth.signUp({
+        email: _email,
+        password: _password,
+        options: { data: { full_name: name, avatar_url: null } },
+      });
+      if (signUpError) {
+        // Generic error message to prevent account enumeration
+        // Supabase may return "User already registered" which reveals email existence
+        const message = "No se pudo crear la cuenta. Inténtalo de nuevo más tarde.";
+        setError(message);
+        throw new Error(message);
+      }
+    },
+    [sb]
+  );
 
   const signOut = useCallback(async () => {
     setError(null);
     const { error: signOutError } = await sb.auth.signOut();
     if (signOutError) {
-      const message = signOutError.message || 'Error al cerrar sesión';
+      const message = signOutError.message || "Error al cerrar sesión";
       setError(message);
       throw new Error(message);
     }
     router.refresh();
-    router.push('/');
+    router.push("/");
   }, [sb, router]);
 
-  const updateProfile = useCallback(async (data: { name: string; avatar_url?: string }) => {
-    setError(null);
-    const { error: updateError } = await sb.auth.updateUser({
-      data: {
-        full_name: data.name,
-        avatar_url: data.avatar_url ?? null,
-      },
-    });
-    if (updateError) {
-      const message = updateError.message || 'Error al actualizar perfil';
-      setError(message);
-      throw new Error(message);
-    }
-    setUser(prev => prev ? { ...prev, name: data.name, avatar_url: data.avatar_url ?? null } : prev);
-  }, [sb]);
+  const updateProfile = useCallback(
+    async (data: { name: string; avatar_url?: string }) => {
+      setError(null);
+      const { error: updateError } = await sb.auth.updateUser({
+        data: {
+          full_name: data.name,
+          avatar_url: data.avatar_url ?? null,
+        },
+      });
+      if (updateError) {
+        const message = updateError.message || "Error al actualizar perfil";
+        setError(message);
+        throw new Error(message);
+      }
+      setUser((prev) =>
+        prev ? { ...prev, name: data.name, avatar_url: data.avatar_url ?? null } : prev
+      );
+    },
+    [sb]
+  );
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, error, clearError, signIn, signUp, signOut, updateProfile }}>
+    <AuthContext.Provider
+      value={{ user, isLoading, error, clearError, signIn, signUp, signOut, updateProfile }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -171,6 +205,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 export function useAuth() {
   const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error('useAuth must be used inside AuthProvider');
+  if (!ctx) throw new Error("useAuth must be used inside AuthProvider");
   return ctx;
 }

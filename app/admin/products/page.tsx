@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ImageUpload } from "@/components/ui/image-upload";
+import { ColorPicker } from "@/components/ui/color-picker";
 
 export default function AdminProductsPage() {
   const sb = useSupabase();
@@ -93,21 +94,35 @@ export default function AdminProductsPage() {
     }
 
     try {
-      // First, delete designs that reference this product or its variants
-      const { error: designsError } = await sb
-        .from("designs")
-        .delete()
-        .or(
-          `product_id.eq.${id},variant_id.in.(select id from product_variants where product_id eq.${id})`
-        );
+      // First, delete designs that reference this product directly
+      let { error: designsError1 } = await sb.from("designs").delete().eq("product_id", id);
 
-      if (designsError) {
-        toast({ variant: "destructive", title: "Error", description: designsError.message });
+      if (designsError1) {
+        toast({ variant: "destructive", title: "Error", description: designsError1.message });
         return;
       }
 
-      // Then delete the product - variants will be deleted via CASCADE foreign key
-      const { error } = await sb.from("products").delete().eq("id", id);
+      // Then, delete designs that reference variants of this product
+      const { data: variantIds, error: variantError } = await sb
+        .from("product_variants")
+        .select("id")
+        .eq("product_id", id);
+
+      if (variantError) {
+        toast({ variant: "destructive", title: "Error", description: variantError.message });
+        return;
+      }
+
+      const ids = variantIds?.map((v) => v.id) || [];
+      let { error: designsError2 } = await sb.from("designs").delete().in("variant_id", ids);
+
+      if (designsError2) {
+        toast({ variant: "destructive", title: "Error", description: designsError2.message });
+        return;
+      }
+
+      // Finally, delete the product - variants will be deleted via CASCADE foreign key
+      let { error } = await sb.from("products").delete().eq("id", id);
 
       if (error) {
         toast({ variant: "destructive", title: "Error", description: error.message });
@@ -603,14 +618,12 @@ export default function AdminProductsPage() {
                   className="h-10"
                 />
               </div>
-              <div>
-                <Label htmlFor="variant-color">Color hex</Label>
-                <Input
-                  id="variant-color"
+              <div className="md:col-span-2">
+                <ColorPicker
                   value={variantForm.color_hex}
-                  onChange={(e) => setVariantForm({ ...variantForm, color_hex: e.target.value })}
-                  placeholder="#ff0000"
-                  className="h-10"
+                  onChange={(color) => setVariantForm({ ...variantForm, color_hex: color })}
+                  label="Color hex"
+                  imageUrl={variantForm.image_url || undefined}
                 />
               </div>
               <div className="md:col-span-2">
