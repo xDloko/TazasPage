@@ -1,24 +1,36 @@
-'use client';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useCart } from '@/components/providers/cart-provider';
-import { useAuth } from '@/components/providers/auth-provider';
-import { Menu, X, ShoppingBag, Sun, Moon, Laptop } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useCart } from "@/components/providers/cart-provider";
+import { useAuth } from "@/components/providers/auth-provider";
+import { Menu, X, ShoppingBag, Sun, Moon, Laptop } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const { count } = useCart();
+  const { count, syncError } = useCart();
   const { theme, setTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const { user, isLoading } = useAuth();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (syncError) {
+      toast({
+        variant: "destructive",
+        title: "Error de sincronización",
+        description: syncError,
+      });
+    }
+  }, [syncError, toast]);
 
   const nav = [
-    { href: '/', label: 'Inicio' },
-    { href: '/tienda', label: 'Tienda' },
-    { href: '/cuenta', label: 'Cuenta' },
-    ...(user?.role === 'admin' ? [{ href: '/admin', label: 'Admin' }] : []),
+    { href: "/", label: "Inicio" },
+    { href: "/tienda", label: "Tienda" },
+    { href: "/cuenta", label: "Cuenta" },
+    ...(user?.role === "admin" ? [{ href: "/admin", label: "Admin" }] : []),
   ];
 
   if (isLoading) {
@@ -38,18 +50,18 @@ export function SiteHeader() {
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-6 md:flex">
-            {nav.map(n => (
+            {nav.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
                 className={`text-sm font-semibold transition-colors ${
-                  n.href === '/admin'
-                    ? pathname.startsWith('/admin')
-                      ? 'text-terracotta'
-                      : 'text-slate-600 hover:text-terracotta dark:text-slate-300'
+                  n.href === "/admin"
+                    ? pathname.startsWith("/admin")
+                      ? "text-terracotta"
+                      : "text-slate-600 hover:text-terracotta dark:text-slate-300"
                     : pathname === n.href
-                    ? 'text-terracotta'
-                    : 'text-slate-600 hover:text-terracotta dark:text-slate-300'
+                      ? "text-terracotta"
+                      : "text-slate-600 hover:text-terracotta dark:text-slate-300"
                 }`}
               >
                 {n.label}
@@ -81,15 +93,15 @@ export function SiteHeader() {
 
         {mobileOpen && (
           <nav className="flex flex-col gap-1 border-t border-slate-200 py-4 md:hidden dark:border-slate-700">
-            {nav.map(n => (
+            {nav.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
                 onClick={() => setMobileOpen(false)}
                 className={`rounded-xl px-4 py-2 text-sm font-semibold ${
                   pathname === n.href
-                    ? 'bg-terracotta/10 text-terracotta'
-                    : 'text-slate-600 dark:text-slate-300'
+                    ? "bg-terracotta/10 text-terracotta"
+                    : "text-slate-600 dark:text-slate-300"
                 }`}
               >
                 {n.label}
@@ -124,15 +136,17 @@ function ThemeToggle({
   return (
     <div className="flex rounded-xl border border-slate-200 dark:border-slate-700">
       {[
-        { value: 'light', Icon: Sun },
-        { value: 'dark', Icon: Moon },
-        { value: 'system', Icon: Laptop },
+        { value: "light", Icon: Sun },
+        { value: "dark", Icon: Moon },
+        { value: "system", Icon: Laptop },
       ].map(({ value, Icon }) => (
         <button
           key={value}
           onClick={() => setTheme(value)}
           className={`flex h-8 w-8 items-center justify-center rounded-lg transition-colors ${
-            theme === value ? 'bg-terracotta text-white' : 'hover:bg-slate-100 dark:hover:bg-slate-800'
+            theme === value
+              ? "bg-terracotta text-white"
+              : "hover:bg-slate-100 dark:hover:bg-slate-800"
           }`}
           title={`Tema: ${value}`}
         >

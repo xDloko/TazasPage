@@ -1,8 +1,16 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react';
-import { useAuth } from '@/components/providers/auth-provider';
-import { useSupabase } from '@/components/providers/supabase-provider';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+  useRef,
+  useMemo,
+} from "react";
+import { useAuth } from "@/components/providers/auth-provider";
+import { useSupabase } from "@/components/providers/supabase-provider";
 
 export interface CartItem {
   id: string;
@@ -14,12 +22,14 @@ export interface CartItem {
   image_url?: string | null;
   /** Nota del cliente para una solicitud de personalización. */
   note?: string | null;
+  /** Referencia al diseño guardado (capas/preview). */
+  design_id?: string | null;
 }
 
 /* eslint-disable no-unused-vars */
 interface CartContextType {
   items: CartItem[];
-  addItem: (item: Omit<CartItem, 'id'>) => Promise<void>;
+  addItem: (item: Omit<CartItem, "id">) => Promise<void>;
   removeItem: (id: string) => void;
   updateQty: (id: string, qty: number) => void;
   updateNote: (id: string, note: string) => void;
@@ -28,12 +38,14 @@ interface CartContextType {
   count: number;
   validateAllPrices: () => Promise<{ valid: boolean; errors: string[] }>;
   isValidating: boolean;
+  syncError: string | null;
+  clearSyncError: () => void;
 }
 /* eslint-enable no-unused-vars */
 
 const CartContext = createContext<CartContextType | null>(null);
 
-const STORAGE_KEY = 'tazas_cart';
+const STORAGE_KEY = "tazas_cart";
 const SYNC_DEBOUNCE_MS = 800;
 
 /** Cache de precios validados por el servidor: clave → precio real */
@@ -65,13 +77,13 @@ async function fetchValidatedPrices(
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/validate-cart-prices`,
       {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items }),
       }
     );
     if (!res.ok) {
-      return items.map(item => ({
+      return items.map((item) => ({
         ...item,
         unit_price: 0,
         valid: false,
@@ -80,17 +92,17 @@ async function fetchValidatedPrices(
     }
     const data = await res.json();
     if (!Array.isArray(data)) {
-      return items.map(item => ({
+      return items.map((item) => ({
         ...item,
         unit_price: 0,
         valid: false,
-        error: 'Respuesta inválida del servidor',
+        error: "Respuesta inválida del servidor",
       }));
     }
     return data as ValidatedItem[];
   } catch (err) {
-    console.error('[cart] Error contacting price validation Edge Function:', err);
-    return items.map(item => ({
+    console.error("[cart] Error contacting price validation Edge Function:", err);
+    return items.map((item) => ({
       ...item,
       unit_price: 0,
       valid: false,
@@ -103,16 +115,13 @@ async function fetchValidatedPrices(
  * Llama a la Edge Function `get-product-price` para obtener el precio real
  * de un solo producto/variante. Solo se usa cuando no hay cache disponible.
  */
-async function fetchSinglePrice(
-  productId: string,
-  variantId: string
-): Promise<number | null> {
+async function fetchSinglePrice(productId: string, variantId: string): Promise<number | null> {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/get-product-price`,
       {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ product_id: productId, variant_id: variantId }),
       }
     );
@@ -121,9 +130,9 @@ async function fetchSinglePrice(
       return null;
     }
     const data = await res.json();
-    return typeof data.price === 'number' ? data.price : null;
+    return typeof data.price === "number" ? data.price : null;
   } catch (err) {
-    console.error('[cart] Error contacting price validation Edge Function:', err);
+    console.error("[cart] Error contacting price validation Edge Function:", err);
     return null;
   }
 }
@@ -145,6 +154,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [hydrated, setHydrated] = useState(false);
   const [isValidating, setIsValidating] = useState(false);
+  const [syncError, setSyncError] = useState<string | null>(null);
+  const clearSyncError = useCallback(() => setSyncError(null), []);
   /** Cache de precios ya validados por el servidor */
   const priceCache = useRef<PriceCache>({});
   /** Evita sincronizar al servidor durante la carga inicial desde Supabase */
@@ -164,20 +175,31 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         if (user) {
           // getUser() verifica la autenticidad y devuelve access_token.
           // No uses getSession() aquí: datos del almacenamiento pueden ser manipulados.
-          const { data: { user: verifiedUser } } = await sb.auth.getUser();
-          const accessToken = verifiedUser?.access_token;
+          const {
+            data: { user: verifiedUser },
+          } = await sb.auth.getUser();
+          // getUser() returns access_token at runtime; type assertion needed
+          const accessToken = (verifiedUser as { access_token?: string } | null)?.access_token;
           const { data, error } = await fetch(
             `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/get-cart`,
             {
               headers: {
-                'Content-Type': 'application/json',
-                ...(accessToken ? { 'Authorization': `Bearer ${accessToken}` } : {}),
+                "Content-Type": "application/json",
+                ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
               },
             }
-          ).then(async (res) => {
-            if (!res.ok) return { data: null, error: new Error(`HTTP ${res.status}`) };
-            return res.json().then((json) => ({ data: json as { items: CartItem[] } | null, error: null as unknown as Error })).catch(() => ({ data: null, error: new Error('Respuesta inválida') }));
-          }).catch((err) => ({ data: null, error: err }));
+          )
+            .then(async (res) => {
+              if (!res.ok) return { data: null, error: new Error(`HTTP ${res.status}`) };
+              return res
+                .json()
+                .then((json) => ({
+                  data: json as { items: CartItem[] } | null,
+                  error: null as unknown as Error,
+                }))
+                .catch(() => ({ data: null, error: new Error("Respuesta inválida") }));
+            })
+            .catch((err) => ({ data: null, error: err }));
 
           if (!cancelled && !error && data?.items && Array.isArray(data.items)) {
             setItems(data.items);
@@ -197,7 +219,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           }
         }
       } catch (err) {
-        console.error('[cart] Error loading cart:', err);
+        console.error("[cart] Error loading cart:", err);
       } finally {
         if (!cancelled) {
           loadingFromServerRef.current = false;
@@ -207,7 +229,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
 
     load();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [user, authLoading, sb]);
 
   // Persistencia: localStorage siempre; Supabase cuando está autenticado.
@@ -219,22 +243,25 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (syncTimer.current) clearTimeout(syncTimer.current);
       syncTimer.current = setTimeout(async () => {
         try {
+          setSyncError(null);
           // getUser() verifica la autenticidad y devuelve access_token.
-          const { data: { user: verifiedUser } } = await sb.auth.getUser();
-          const accessToken = verifiedUser?.access_token;
-          await fetch(
-            `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/sync-cart`,
-            {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                ...(accessToken ? { 'Authorization': `Bearer ${accessToken}` } : {}),
-              },
-              body: JSON.stringify({ items }),
-            }
-          );
+          const {
+            data: { user: verifiedUser },
+          } = await sb.auth.getUser();
+          // getUser() returns access_token at runtime; type assertion needed
+          const accessToken = (verifiedUser as { access_token?: string } | null)?.access_token;
+          await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/sync-cart`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+            },
+            body: JSON.stringify({ items }),
+          });
+          setSyncError(null);
         } catch (err) {
-          console.error('[cart] Error syncing cart to server:', err);
+          console.error("[cart] Error syncing cart to server:", err);
+          setSyncError(err instanceof Error ? err.message : "Error al sincronizar el carrito");
         }
       }, SYNC_DEBOUNCE_MS);
       return () => {
@@ -271,7 +298,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
    * el precio real viene del servidor.
    */
   const addItem = useCallback(
-    async (rawItem: Omit<CartItem, 'id'>): Promise<void> => {
+    async (rawItem: Omit<CartItem, "id">): Promise<void> => {
       const realPrice = await getValidatedPrice(rawItem.product_id, rawItem.variant_id);
       if (realPrice === null) {
         throw new Error(
@@ -282,18 +309,18 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       const itemWithRealPrice: CartItem = {
         ...rawItem,
         unit_price: realPrice,
-        id: '',
+        id: "",
       };
 
-      setItems(current => {
+      setItems((current) => {
         const existing = current.find(
-          i =>
+          (i) =>
             i.product_id === itemWithRealPrice.product_id &&
             i.variant_id === itemWithRealPrice.variant_id &&
             (i.note ?? null) === (itemWithRealPrice.note ?? null)
         );
         if (existing) {
-          return current.map(i =>
+          return current.map((i) =>
             i.id === existing.id
               ? { ...i, qty: i.qty + itemWithRealPrice.qty, unit_price: realPrice }
               : i
@@ -306,26 +333,26 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   );
 
   const removeItem = useCallback((id: string) => {
-    setItems(current => current.filter(i => i.id !== id));
+    setItems((current) => current.filter((i) => i.id !== id));
   }, []);
 
   const updateQty = useCallback((id: string, qty: number) => {
     if (qty <= 0) {
-      setItems(current => current.filter(i => i.id !== id));
+      setItems((current) => current.filter((i) => i.id !== id));
     } else {
-      setItems(current => current.map(i => (i.id === id ? { ...i, qty } : i)));
+      setItems((current) => current.map((i) => (i.id === id ? { ...i, qty } : i)));
     }
   }, []);
 
   /** Actualiza la nota de personalización de un ítem del carrito. */
   const updateNote = useCallback((id: string, note: string) => {
-    setItems(current => current.map(i => (i.id === id ? { ...i, note: note || null } : i)));
+    setItems((current) => current.map((i) => (i.id === id ? { ...i, note: note || null } : i)));
   }, []);
 
   const clear = useCallback(() => setItems([]), []);
 
-  const total = items.reduce((sum, i) => sum + i.unit_price * i.qty, 0);
-  const count = items.reduce((sum, i) => sum + i.qty, 0);
+  const total = useMemo(() => items.reduce((sum, i) => sum + i.unit_price * i.qty, 0), [items]);
+  const count = useMemo(() => items.reduce((sum, i) => sum + i.qty, 0), [items]);
 
   /**
    * Revalida todos los precios del carrito contra el servidor en UNA SOLA llamada batch.
@@ -343,25 +370,23 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
       for (const validated of validatedItems) {
         const matchingItem = items.find(
-          i => i.product_id === validated.product_id && i.variant_id === validated.variant_id
+          (i) => i.product_id === validated.product_id && i.variant_id === validated.variant_id
         );
         if (!matchingItem) continue;
 
         if (!validated.valid) {
-          errors.push(
-            `${matchingItem.name}: ${validated.error ?? 'precio no disponible'}`
-          );
+          errors.push(`${matchingItem.name}: ${validated.error ?? "precio no disponible"}`);
         } else if (validated.unit_price !== matchingItem.unit_price) {
           // El precio del servidor cambió — actualiza en el state
-          setItems(current =>
-            current.map(i =>
+          setItems((current) =>
+            current.map((i) =>
               i.id === matchingItem.id ? { ...i, unit_price: validated.unit_price } : i
             )
           );
           priceCache.current[priceKey(validated.product_id, validated.variant_id)] =
             validated.unit_price;
           errors.push(
-            `${matchingItem.name}: precio actualizado de $${matchingItem.unit_price.toLocaleString('es-CL')} a $${validated.unit_price.toLocaleString('es-CL')}`
+            `${matchingItem.name}: precio actualizado de $${matchingItem.unit_price.toLocaleString("es-CL")} a $${validated.unit_price.toLocaleString("es-CL")}`
           );
         } else {
           // Precio válido y coincide — refrescar cache
@@ -389,6 +414,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         count,
         validateAllPrices,
         isValidating,
+        syncError,
+        clearSyncError,
       }}
     >
       {children}
@@ -398,6 +425,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
 export function useCart() {
   const ctx = useContext(CartContext);
-  if (!ctx) throw new Error('useCart must be used inside CartProvider');
+  if (!ctx) throw new Error("useCart must be used inside CartProvider");
   return ctx;
 }

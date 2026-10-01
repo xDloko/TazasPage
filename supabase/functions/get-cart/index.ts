@@ -20,6 +20,7 @@ interface CartItem {
   name: string;
   image_url: string | null;
   note: string | null;
+  design_id?: string | null;
 }
 
 Deno.serve(async (req: Request) => {
@@ -30,19 +31,22 @@ Deno.serve(async (req: Request) => {
   try {
     const authHeader = req.headers.get("Authorization");
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
-      return new Response(
-        JSON.stringify({ error: "Authorization header required" }),
-        { status: 401, headers: { "Content-Type": "application/json", ...corsHeaders } }
-      );
+      return new Response(JSON.stringify({ error: "Authorization header required" }), {
+        status: 401,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
     }
 
     const jwt = authHeader.replace("Bearer ", "");
-    const { data: { user }, error: authError } = await supabase.auth.getUser(jwt);
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser(jwt);
     if (authError || !user) {
-      return new Response(
-        JSON.stringify({ error: "Unauthorized" }),
-        { status: 401, headers: { "Content-Type": "application/json", ...corsHeaders } }
-      );
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
     }
 
     const { data, error } = await supabase
@@ -53,10 +57,10 @@ Deno.serve(async (req: Request) => {
 
     if (error) {
       console.error("[get-cart] Cart read error:", error);
-      return new Response(
-        JSON.stringify({ error: error.message }),
-        { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
-      );
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 500,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
     }
 
     const items = (data ?? []) as CartItem[];

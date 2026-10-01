@@ -42,25 +42,25 @@ Estado: 2026-09-23 · Prioridad: alta y media
 
 ### 🟠 Media prioridad
 
-- [ ] **P4 — Race condition en login**
-  - [ ] P4.1 — Confirmar `await signIn(...)` en `app/auth/signin/page.tsx` (ya tiene await, verificar que no haya regresión).
-  - [ ] P4.2 — Repetir verificación en `signup/page.tsx`.
+- [x] **P4 — Race condition en login**
+  - [x] P4.1 — Confirmar `await signIn(...)` en `app/auth/signin/page.tsx` (ya tiene await, verificar que no haya regresión).
+  - [x] P4.2 — Repetir verificación en `signup/page.tsx`.
 
-- [ ] **P5 — Rendimiento en tienda**
-  - [ ] P5.1 — Memoizar `allColors` en `app/tienda/page.tsx` con `useMemo`.
-  - [ ] P5.2 — Revisar `CartProvider` para refactor si es necesario.
+- [x] **P5 — Rendimiento en tienda**
+  - [x] P5.1 — Memoizar `allColors` en `app/tienda/page.tsx` con `useMemo`.
+  - [x] P5.2 — Revisar `CartProvider` para refactor si es necesario.
 
-- [ ] **P6 — Manejo de errores**
-  - [ ] P6.1 — Añadir try/catch explícito en `app/productos/[slug]/page.tsx`.
-  - [ ] P6.2 — Notificar al usuario errores de sincronización de carrito (no solo `console.error`).
+- [x] **P6 — Manejo de errores** ✅ Completado 2026-10-01
+  - [x] P6.1 — Añadir try/catch explícito en `app/productos/[slug]/page.tsx`. **Hecho** — try/catch en `fetch()` (líneas 27-54) y en `handleAdd()` (líneas 83-106).
+  - [x] P6.2 — Notificar al usuario errores de sincronización de carrito (no solo `console.error`). **Hecho** — `syncError` se gestiona en `CartProvider` y se notifica vía toast en `site-header.tsx`.
 
-- [ ] **P7 — Tipos y consistencia**
-  - [ ] P7.1 — Alinear `CartItem` local con schema de `order_items` (`design_id`).
-  - [ ] P7.2 — Asegurar que `note` fluya hasta `order_items` vía Edge Function.
+- [x] **P7 — Tipos y consistencia** ✅ Completado 2026-10-01
+  - [x] P7.1 — Alinear `CartItem` local con schema de `order_items` (`design_id`). **Hecho** — Agregado `design_id?: string | null` al interface `CartItem` en `components/providers/cart-provider.tsx`, `supabase/functions/sync-cart/index.ts` y `supabase/functions/get-cart/index.ts`. Verificado con `npx tsc --noEmit` (0 errores) y `npm run build` (Compiled successfully).
+  - [x] P7.2 — Asegurar que `note` fluya hasta `order_items` vía Edge Function. **Hecho** — `create-order` Edge Function ya acepta y pasa `note` a `order_items` (línea 133); `CartItem` ya tiene campo `note`.
 
-- [ ] **P8 — Validación de inputs**
-  - [ ] P8.1 — Sanitizar dirección de envío en checkout.
-  - [ ] P8.2 — Limitar longitud de nota de personalización.
+- [x] **P8 — Validación de inputs** ✅ Completado 2026-10-01
+  - [x] P8.1 — Sanitizar dirección de envío en checkout. **Hecho** — `sanitizeAddress()` en `app/checkout/page.tsx` elimina HTML, caracteres de control, colapsa espacios, trunca a 500 chars. Aplicado antes de enviar a `create-order`.
+  - [x] P8.2 — Limitar longitud de nota de personalización. **Hecho** — `MAX_NOTE_LENGTH = 500` en `components/productos/PersonalizarModal.tsx`; contador de caracteres visible; botones deshabilitados si excede límite; toast de error informativo. Verificado con `npx tsc --noEmit` (0 errores) y `npm run build` (13 routes compiled successfully).
 
 ## Notas técnicas importantes
 

@@ -137,7 +137,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       // Refresh the router so server-side auth state (cookies) is synced
       // before the caller navigates away. Without this the redirect lands on
       // a page that still sees the user as unauthenticated.
-      router.refresh();
+      await router.refresh();
     },
     [sb, router]
   );
@@ -169,7 +169,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setError(message);
       throw new Error(message);
     }
-    router.refresh();
+    await router.refresh();
     router.push("/");
   }, [sb, router]);
 

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSupabase } from "@/components/providers/supabase-provider";
@@ -42,16 +42,20 @@ export default function TiendaPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const allColors = Array.from(
-    new Set(products.flatMap((p) => p.variants.map((v) => v.color_hex)))
+  const allColors = useMemo(
+    () => Array.from(new Set(products.flatMap((p) => p.variants.map((v) => v.color_hex)))),
+    [products]
   );
 
-  const filtered = products.filter((p) => {
-    const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
-    const matchesColor =
-      filterColor === "all" || p.variants.some((v) => v.color_hex === filterColor);
-    return matchesSearch && matchesColor && p.active;
-  });
+  const filtered = useMemo(() => {
+    const searchLower = search.toLowerCase();
+    return products.filter((p) => {
+      const matchesSearch = p.name.toLowerCase().includes(searchLower);
+      const matchesColor =
+        filterColor === "all" || p.variants.some((v) => v.color_hex === filterColor);
+      return matchesSearch && matchesColor && p.active;
+    });
+  }, [products, search, filterColor]);
 
   const handleQuickAdd = async (e: React.MouseEvent, product: ProductWithVariants) => {
     e.preventDefault();
