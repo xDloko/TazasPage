@@ -173,33 +173,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       loadingFromServerRef.current = true;
       try {
         if (user) {
-          // getUser() verifica la autenticidad y devuelve access_token.
-          // No uses getSession() aquí: datos del almacenamiento pueden ser manipulados.
-          const {
-            data: { user: verifiedUser },
-          } = await sb.auth.getUser();
-          // getUser() returns access_token at runtime; type assertion needed
-          const accessToken = (verifiedUser as { access_token?: string } | null)?.access_token;
-          const { data, error } = await fetch(
-            `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/get-cart`,
-            {
-              headers: {
-                "Content-Type": "application/json",
-                ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
-              },
-            }
-          )
-            .then(async (res) => {
-              if (!res.ok) return { data: null, error: new Error(`HTTP ${res.status}`) };
-              return res
-                .json()
-                .then((json) => ({
-                  data: json as { items: CartItem[] } | null,
-                  error: null as unknown as Error,
-                }))
-                .catch(() => ({ data: null, error: new Error("Respuesta inválida") }));
-            })
-            .catch((err) => ({ data: null, error: err }));
+          // sb.functions.invoke() automatically attaches the user JWT
+          const { data, error } = await sb.functions.invoke<{ items: CartItem[] }>("get-cart");
 
           if (!cancelled && !error && data?.items && Array.isArray(data.items)) {
             setItems(data.items);
@@ -244,20 +219,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       syncTimer.current = setTimeout(async () => {
         try {
           setSyncError(null);
-          // getUser() verifica la autenticidad y devuelve access_token.
-          const {
-            data: { user: verifiedUser },
-          } = await sb.auth.getUser();
-          // getUser() returns access_token at runtime; type assertion needed
-          const accessToken = (verifiedUser as { access_token?: string } | null)?.access_token;
-          await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/sync-cart`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
-            },
-            body: JSON.stringify({ items }),
-          });
+          // sb.functions.invoke() automatically attaches the user JWT
+          await sb.functions.invoke("sync-cart", { body: { items } });
           setSyncError(null);
         } catch (err) {
           console.error("[cart] Error syncing cart to server:", err);
