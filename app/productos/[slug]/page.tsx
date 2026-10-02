@@ -6,10 +6,22 @@ import { useRouter } from "next/navigation";
 import { useSupabase } from "@/components/providers/supabase-provider";
 import { useCart } from "@/components/providers/cart-provider";
 import { useToast } from "@/components/ui/use-toast";
-import { Product, ProductVariant } from "@/lib/types";
+import { Product, ProductVariant, ProductCategory } from "@/lib/types";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ShoppingBag, Check, Edit3 } from "lucide-react";
-import { PersonalizarModal } from "@/components/productos/PersonalizarModal";
+import { ArrowLeft, ShoppingBag, Check, Coffee, Shirt, Package } from "lucide-react";
+import { CustomizeModal } from "@/components/productos/CustomizeModal";
+
+const CATEGORY_ICONS: Record<ProductCategory, React.ComponentType<{ className?: string }>> = {
+  mug: Coffee,
+  clothing: Shirt,
+  accessory: Package,
+};
+
+const CATEGORY_LABELS: Record<ProductCategory, string> = {
+  mug: "Tazas",
+  clothing: "Ropa",
+  accessory: "Accesorios",
+};
 
 export default function ProductoPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
@@ -24,7 +36,9 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
   const [isCustomizing, setIsCustomizing] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
     async function fetch() {
+      if (cancelled) return;
       try {
         const { data } = await sb
           .from("products")
@@ -32,8 +46,8 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
           .eq("slug", slug)
           .eq("active", true)
           .single();
-        if (!data) {
-          notFound();
+        if (cancelled || !data) {
+          if (!data) notFound();
           return;
         }
         const row = data as Product & { product_variants: ProductVariant[] };
@@ -44,16 +58,21 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
         setSelectedVariant(firstActive);
         setLoading(false);
       } catch (err) {
-        console.error("[producto] Error cargando producto:", err);
-        setLoading(false);
-        toast({
-          variant: "destructive",
-          title: "Error al cargar el producto",
-          description: err instanceof Error ? err.message : "No se pudo cargar el producto.",
-        });
+        if (!cancelled) {
+          console.error("[producto] Error cargando producto:", err);
+          setLoading(false);
+          toast({
+            variant: "destructive",
+            title: "Error al cargar el producto",
+            description: err instanceof Error ? err.message : "No se pudo cargar el producto.",
+          });
+        }
       }
     }
     fetch();
+    return () => {
+      cancelled = true;
+    };
   }, [sb, slug]);
 
   if (loading) {
@@ -77,6 +96,8 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
   if (!product) return notFound();
 
   const price = product.base_price + (selectedVariant?.price_adj ?? 0);
+  const CategoryIcon = CATEGORY_ICONS[product.category];
+  const categoryLabel = CATEGORY_LABELS[product.category];
 
   const handleAdd = async () => {
     if (!selectedVariant) return;
@@ -89,6 +110,8 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
         name: product.name,
         image_url: selectedVariant.image_url ?? product.cover_image,
         note: null, // sin personalización
+        category: product.category,
+        variant_attributes: selectedVariant.attributes,
       });
       setAdded(true);
       setTimeout(() => setAdded(false), 1500);
@@ -131,7 +154,9 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
                   className="h-full w-full object-cover"
                 />
               ) : (
-                <div className="flex h-full items-center justify-center text-6xl">☕</div>
+                <div className="flex h-full items-center justify-center text-6xl">
+                  <CategoryIcon className="h-12 w-12 text-terracotta" />
+                </div>
               )}
             </div>
 
@@ -139,42 +164,66 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
               <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
                 {product.name}
               </h1>
+              <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mt-2">
+                <CategoryIcon className="h-3 w-3" />
+                <span>{categoryLabel}</span>
+              </div>
               <p className="mt-3 text-2xl font-bold text-terracotta">
                 ${price.toLocaleString("es-CL")}
               </p>
               <p className="mt-4 text-slate-600 dark:text-slate-400">
-                {product.description ?? "Taza de ceramica personalizable de alta calidad."}
+                {product.description ?? "Producto personalizable de alta calidad."}
               </p>
 
+              {/* Variant selector - dynamic based on category */}
               <div className="mt-8">
                 <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300">
-                  Acabado
+                  {product.category === "mug" ? "Acabado" : "Talla y Color"}
                 </h3>
                 <div className="mt-3 flex flex-wrap gap-3">
                   {product.variants
                     .filter((v) => v.active)
-                    .map((v) => (
-                      <button
-                        key={v.id}
-                        onClick={() => setSelectedVariant(v)}
-                        className={`flex items-center gap-2 rounded-2xl border-2 px-4 py-2 text-sm font-semibold transition-all ${
-                          selectedVariant?.id === v.id
-                            ? "border-terracotta bg-terracotta/10"
-                            : "border-slate-200 hover:border-slate-300 dark:border-slate-600"
-                        }`}
-                      >
-                        <span
-                          className="h-4 w-4 rounded-full border border-slate-300"
-                          style={{ backgroundColor: v.color_hex }}
-                        />
-                        {v.name}
-                        {v.price_adj !== 0 && (
-                          <span className="text-xs text-slate-500">
-                            {v.price_adj > 0 ? "+" : ""}${v.price_adj}
-                          </span>
-                        )}
-                      </button>
-                    ))}
+                    .map((variant) => {
+                      // Build display text based on variant attributes
+                      const attrs = variant.attributes || {};
+                      const size = attrs.size;
+                      const colorName = attrs.color || variant.name;
+                      // colorHex can be string | number from attributes or string | null from DB; ensure it's a valid CSS color string
+                      const colorHex = (attrs.color_hex ??
+                        variant.color_hex ??
+                        "#000000") as string;
+
+                      return (
+                        <button
+                          key={variant.id}
+                          onClick={() => setSelectedVariant(variant)}
+                          className={`flex items-center gap-2 rounded-2xl border-2 px-4 py-2 text-sm font-semibold transition-all ${
+                            selectedVariant?.id === variant.id
+                              ? "border-terracotta bg-terracotta/10"
+                              : "border-slate-200 hover:border-slate-300 dark:border-slate-600"
+                          }`}
+                        >
+                          <div className="flex items-center gap-2">
+                            {size && (
+                              <>
+                                <span className="text-xs font-medium text-slate-700">{size}</span>
+                                <span className="ml-1">•</span>
+                              </>
+                            )}
+                            <span
+                              className="h-4 w-4 rounded-full border border-slate-300"
+                              style={{ backgroundColor: colorHex }}
+                            />
+                            <span className="hidden ml-2">{colorName}</span>
+                          </div>
+                          {variant.price_adj !== 0 && (
+                            <span className="text-xs text-slate-500 ml-2">
+                              {variant.price_adj > 0 ? "+" : ""}${variant.price_adj}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
                 </div>
               </div>
 
@@ -191,7 +240,7 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
                   )}
                 </Button>
                 <Button size="lg" className="flex-1" onClick={handleCustomizeAndAdd}>
-                  Deja una nota
+                  Personaliza
                 </Button>
               </div>
             </div>
@@ -199,11 +248,12 @@ export default function ProductoPage({ params }: { params: Promise<{ slug: strin
         </div>
       </div>
       {isCustomizing && (
-        <PersonalizarModal
+        <CustomizeModal
           open={isCustomizing}
           onClose={() => setIsCustomizing(false)}
-          product={product}
+          product={{ id: product.id, name: product.name, base_price: product.base_price }}
           variant={selectedVariant}
+          category={product.category}
         />
       )}
     </>

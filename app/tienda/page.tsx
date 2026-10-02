@@ -1,28 +1,50 @@
 "use client";
 import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { useSupabase } from "@/components/providers/supabase-provider";
 import { useCart } from "@/components/providers/cart-provider";
 import { useToast } from "@/components/ui/use-toast";
-import { Product, ProductVariant } from "@/lib/types";
+import { Product, ProductVariant, ProductCategory } from "@/lib/types";
 import { Button } from "@/components/ui/button";
-import { ShoppingBag, Search } from "lucide-react";
+import { ShoppingBag, Search, Coffee, Shirt, Package } from "lucide-react";
 
 // Tipo para el resultado de Supabase con la relación product_variants
 type ProductWithVariants = Product & { variants: ProductVariant[] };
 type SupabaseProductRow = Product & { product_variants: ProductVariant[] };
 
+const CATEGORY_LABELS: Record<ProductCategory, string> = {
+  mug: "Tazas",
+  clothing: "Ropa",
+  accessory: "Accesorios",
+};
+
+const CATEGORY_ICONS: Record<ProductCategory, React.ComponentType<{ className?: string }>> = {
+  mug: Coffee,
+  clothing: Shirt,
+  accessory: Package,
+};
+
 export default function TiendaPage() {
   const sb = useSupabase();
   const { addItem } = useCart();
   const { toast } = useToast();
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [products, setProducts] = useState<ProductWithVariants[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [filterColor, setFilterColor] = useState<string>("all");
+  const [filterCategory, setFilterCategory] = useState<ProductCategory | "all">("all");
 
   useEffect(() => {
+    // Initialize category filter from URL query param on first load
+    const urlCategory = searchParams.get("category");
+    if (urlCategory && ["mug", "clothing", "accessory"].includes(urlCategory as ProductCategory)) {
+      setFilterCategory(urlCategory as ProductCategory);
+    }
+
     let cancelled = false;
     async function fetchProducts() {
       const { data } = await sb
@@ -40,10 +62,15 @@ export default function TiendaPage() {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [searchParams]);
 
   const allColors = useMemo(
-    () => Array.from(new Set(products.flatMap((p) => p.variants.map((v) => v.color_hex)))),
+    () =>
+      Array.from(
+        new Set(
+          products.flatMap((p) => p.variants.map((v) => v.color_hex).filter(Boolean) as string[])
+        )
+      ),
     [products]
   );
 
@@ -53,9 +80,10 @@ export default function TiendaPage() {
       const matchesSearch = p.name.toLowerCase().includes(searchLower);
       const matchesColor =
         filterColor === "all" || p.variants.some((v) => v.color_hex === filterColor);
-      return matchesSearch && matchesColor && p.active;
+      const matchesCategory = filterCategory === "all" || p.category === filterCategory;
+      return matchesSearch && matchesColor && matchesCategory && p.active;
     });
-  }, [products, search, filterColor]);
+  }, [products, search, filterColor, filterCategory]);
 
   const handleQuickAdd = async (e: React.MouseEvent, product: ProductWithVariants) => {
     e.preventDefault();
@@ -70,6 +98,9 @@ export default function TiendaPage() {
           unit_price: product.base_price + (firstVariant.price_adj ?? 0), // visual, will be overridden
           name: product.name,
           image_url: firstVariant.image_url ?? product.cover_image,
+          note: null,
+          category: product.category,
+          variant_attributes: firstVariant.attributes,
         });
         toast({
           title: "Agregado al carrito",
@@ -86,6 +117,73 @@ export default function TiendaPage() {
     }
   };
 
+  const renderCategoryTabs = () => (
+    <div className="flex gap-2 flex-wrap">
+      <button
+        onClick={() => setFilterCategory("all")}
+        className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
+          filterCategory === "all"
+            ? "bg-terracotta text-white"
+            : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300"
+        }`}
+      >
+        Todas
+      </button>
+      {(["mug", "clothing", "accessory"] as ProductCategory[]).map((cat) => {
+        const CatIcon = CATEGORY_ICONS[cat];
+        return (
+          <button
+            key={cat}
+            onClick={() => setFilterCategory(cat)}
+            className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
+              filterCategory === cat
+                ? "bg-terracotta text-white"
+                : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300"
+            }`}
+          >
+            <CatIcon className="h-4 w-4" />
+            {CATEGORY_LABELS[cat]}
+          </button>
+        );
+      })}
+    </div>
+  );
+
+  const renderColorFilters = () => (
+    <div className="flex gap-2 flex-wrap">
+      <button
+        onClick={() => setFilterColor("all")}
+        className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
+          filterColor === "all"
+            ? "bg-terracotta text-white"
+            : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300"
+        }`}
+      >
+        Todos los colores
+      </button>
+      {allColors.map((color) => (
+        <button
+          key={color}
+          onClick={() => setFilterColor(color)}
+          className={`group relative rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
+            filterColor === color
+              ? "bg-terracotta text-white"
+              : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300"
+          }`}
+          title={color}
+        >
+          <span className="flex items-center gap-2">
+            <span
+              className="h-4 w-4 rounded-full border border-slate-300 dark:border-slate-600"
+              style={{ backgroundColor: color }}
+            />
+            <span className="hidden group-hover:inline">{color}</span>
+          </span>
+        </button>
+      ))}
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-bone dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 py-12">
@@ -94,7 +192,7 @@ export default function TiendaPage() {
             Tienda
           </h1>
           <p className="mt-2 text-lg text-slate-600 dark:text-slate-400">
-            Tazas de cerámica artesanal listas para personalizar
+            Tazas, ropa y accesorios para personalizar
           </p>
         </div>
 
@@ -103,43 +201,21 @@ export default function TiendaPage() {
             <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
-              placeholder="Buscar tazas..."
+              placeholder="Buscar productos..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full rounded-2xl border-2 border-slate-200 bg-white py-2.5 pl-10 pr-4 text-base focus:border-terracotta focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
             />
           </div>
-          <div className="flex gap-2 flex-wrap">
-            <button
-              onClick={() => setFilterColor("all")}
-              className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
-                filterColor === "all"
-                  ? "bg-terracotta text-white"
-                  : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300"
-              }`}
-            >
-              Todas
-            </button>
-            {allColors.map((color) => (
-              <button
-                key={color}
-                onClick={() => setFilterColor(color)}
-                className={`group relative rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
-                  filterColor === color
-                    ? "bg-terracotta text-white"
-                    : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300"
-                }`}
-                title={color}
-              >
-                <span className="flex items-center gap-2">
-                  <span
-                    className="h-4 w-4 rounded-full border border-slate-300 dark:border-slate-600"
-                    style={{ backgroundColor: color }}
-                  />
-                  <span className="hidden group-hover:inline">{color}</span>
-                </span>
-              </button>
-            ))}
+          {renderCategoryTabs()}
+        </div>
+
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="w-full sm:w-auto">
+            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+              Filtrar por color
+            </label>
+            {renderColorFilters()}
           </div>
         </div>
 
@@ -159,6 +235,10 @@ export default function TiendaPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((product) => {
               const basePrice = product.base_price;
+              // Defensive: product.category may be undefined if migration 006 hasn't
+              // been applied yet — fall back to the generic Package icon so the store
+              // page never crashes on an unknown category value.
+              const CategoryIcon = CATEGORY_ICONS[product.category as ProductCategory] ?? Package;
               return (
                 <Link
                   key={product.id}
@@ -175,10 +255,18 @@ export default function TiendaPage() {
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="flex h-full items-center justify-center text-4xl">☕</div>
+                      <div className="flex h-full items-center justify-center text-4xl">
+                        <CategoryIcon className="h-12 w-12 text-terracotta" />
+                      </div>
                     )}
                   </div>
                   <div className="mt-4">
+                    <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                      <CategoryIcon className="h-3 w-3" />
+                      <span>
+                        {CATEGORY_LABELS[product.category as ProductCategory] ?? "Producto"}
+                      </span>
+                    </div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                       {product.name}
                     </h3>

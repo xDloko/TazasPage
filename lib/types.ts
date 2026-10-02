@@ -1,10 +1,6 @@
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | { [key: string]: Json | undefined }
-  | Json[];
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
+
+export type ProductCategory = "mug" | "clothing" | "accessory";
 
 export type Database = {
   public: {
@@ -38,8 +34,18 @@ export type Database = {
           variant_id?: string | null;
         };
         Relationships: [
-          { foreignKeyName: 'designs_product_id_fkey'; columns: ['product_id']; referencedRelation: 'products'; referencedColumns: ['id'] },
-          { foreignKeyName: 'designs_variant_id_fkey'; columns: ['variant_id']; referencedRelation: 'product_variants'; referencedColumns: ['id'] },
+          {
+            foreignKeyName: "designs_product_id_fkey";
+            columns: ["product_id"];
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "designs_variant_id_fkey";
+            columns: ["variant_id"];
+            referencedRelation: "product_variants";
+            referencedColumns: ["id"];
+          },
         ];
       };
       order_items: {
@@ -74,10 +80,30 @@ export type Database = {
           variant_id?: string | null;
         };
         Relationships: [
-          { foreignKeyName: 'order_items_design_id_fkey'; columns: ['design_id']; referencedRelation: 'designs'; referencedColumns: ['id'] },
-          { foreignKeyName: 'order_items_order_id_fkey'; columns: ['order_id']; referencedRelation: 'orders'; referencedColumns: ['id'] },
-          { foreignKeyName: 'order_items_product_id_fkey'; columns: ['product_id']; referencedRelation: 'products'; referencedColumns: ['id'] },
-          { foreignKeyName: 'order_items_variant_id_fkey'; columns: ['variant_id']; referencedRelation: 'product_variants'; referencedColumns: ['id'] },
+          {
+            foreignKeyName: "order_items_design_id_fkey";
+            columns: ["design_id"];
+            referencedRelation: "designs";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "order_items_order_id_fkey";
+            columns: ["order_id"];
+            referencedRelation: "orders";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "order_items_product_id_fkey";
+            columns: ["product_id"];
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "order_items_variant_id_fkey";
+            columns: ["variant_id"];
+            referencedRelation: "product_variants";
+            referencedColumns: ["id"];
+          },
         ];
       };
       orders: {
@@ -112,13 +138,19 @@ export type Database = {
           user_id?: string;
         };
         Relationships: [
-          { foreignKeyName: 'orders_design_id_fkey'; columns: ['design_id']; referencedRelation: 'designs'; referencedColumns: ['id'] },
+          {
+            foreignKeyName: "orders_design_id_fkey";
+            columns: ["design_id"];
+            referencedRelation: "designs";
+            referencedColumns: ["id"];
+          },
         ];
       };
       product_variants: {
         Row: {
           active: boolean;
-          color_hex: string;
+          attributes: Json | null;
+          color_hex: string | null;
           created_at: string | null;
           id: string;
           image_url: string | null;
@@ -130,36 +162,44 @@ export type Database = {
         };
         Insert: {
           active?: boolean;
-          color_hex: string;
+          attributes?: Json | null;
+          color_hex?: string | null;
           created_at?: string | null;
           id?: string;
           image_url?: string | null;
           name: string;
-          price_adj?: number;
+          price_adj: number;
           product_id: string;
           stock?: number;
           updated_at?: string | null;
         };
         Update: {
           active?: boolean;
-          color_hex?: string;
+          attributes?: Json | null;
+          color_hex?: string | null;
           created_at?: string | null;
           id?: string;
           image_url?: string | null;
           name?: string;
-          price_adj?: number;
+          price_adj: number;
           product_id?: string;
           stock?: number;
           updated_at?: string | null;
         };
         Relationships: [
-          { foreignKeyName: 'product_variants_product_id_fkey'; columns: ['product_id']; referencedRelation: 'products'; referencedColumns: ['id'] },
+          {
+            foreignKeyName: "product_variants_product_id_fkey";
+            columns: ["product_id"];
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
         ];
       };
       products: {
         Row: {
           active: boolean;
           base_price: number;
+          category: ProductCategory;
           cover_image: string | null;
           created_at: string | null;
           description: string | null;
@@ -171,6 +211,7 @@ export type Database = {
         Insert: {
           active?: boolean;
           base_price?: number;
+          category?: ProductCategory;
           cover_image?: string | null;
           created_at?: string | null;
           description?: string | null;
@@ -182,6 +223,7 @@ export type Database = {
         Update: {
           active?: boolean;
           base_price?: number;
+          category?: ProductCategory;
           cover_image?: string | null;
           created_at?: string | null;
           description?: string | null;
@@ -209,7 +251,7 @@ export type Database = {
           name?: string | null;
           phone?: string | null;
           role?: string;
-          updated_at?: string | null;
+          updated_at: string | null;
         };
         Update: {
           avatar_url?: string | null;
@@ -218,7 +260,7 @@ export type Database = {
           name?: string | null;
           phone?: string | null;
           role?: string;
-          updated_at?: string | null;
+          updated_at: string | null;
         };
         Relationships: [];
       };
@@ -230,19 +272,26 @@ export type Database = {
   };
 };
 
-export type Tables<T extends keyof Database['public']['Tables']> =
-  Database['public']['Tables'][T]['Row'];
-export type TablesInsert<T extends keyof Database['public']['Tables']> =
-  Database['public']['Tables'][T]['Insert'];
-export type TablesUpdate<T extends keyof Database['public']['Tables']> =
-  Database['public']['Tables'][T]['Update'];
+export type Tables<T extends keyof Database["public"]["Tables"]> =
+  Database["public"]["Tables"][T]["Row"];
+export type TablesInsert<T extends keyof Database["public"]["Tables"]> =
+  Database["public"]["Tables"][T]["Insert"];
+export type TablesUpdate<T extends keyof Database["public"]["Tables"]> =
+  Database["public"]["Tables"][T]["Update"];
 
-export type Product = Tables<'products'>;
-export type ProductVariant = Tables<'product_variants'>;
+/** Helper type for category-aware products */
+export type Product = Tables<"products"> & { category: ProductCategory };
+
+/** Helper type for variants with flexible attributes */
+export type ProductVariant = Tables<"product_variants"> & {
+  attributes?: Record<string, string | number>;
+  color_hex?: string | null;
+};
+
 export type ProductWithVariants = Product & {
   product_variants?: ProductVariant[];
 };
-export type Profile = Tables<'profiles'>;
-export type Design = Tables<'designs'>;
-export type Order = Tables<'orders'>;
-export type OrderItem = Tables<'order_items'>;
+export type Profile = Tables<"profiles">;
+export type Design = Tables<"designs">;
+export type Order = Tables<"orders">;
+export type OrderItem = Tables<"order_items">;

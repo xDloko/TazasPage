@@ -3,12 +3,18 @@
 import { useState, useEffect } from "react";
 import { useSupabase } from "@/components/providers/supabase-provider";
 import { useToast } from "@/components/ui/use-toast";
-import { Product, ProductVariant, ProductWithVariants } from "@/lib/types";
+import { Product, ProductVariant, ProductWithVariants, ProductCategory } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ImageUpload } from "@/components/ui/image-upload";
 import { ColorPicker } from "@/components/ui/color-picker";
+
+const CATEGORIES: { value: ProductCategory; label: string }[] = [
+  { value: "mug", label: "Taza" },
+  { value: "clothing", label: "Ropa" },
+  { value: "accessory", label: "Accesorio" },
+];
 
 export default function AdminProductsPage() {
   const sb = useSupabase();
@@ -21,6 +27,7 @@ export default function AdminProductsPage() {
     base_price: 0,
     cover_image: "",
     active: true,
+    category: "mug" as ProductCategory,
   });
   const [editing, setEditing] = useState<ProductWithVariants | null>(null);
 
@@ -50,6 +57,7 @@ export default function AdminProductsPage() {
         base_price: newProduct.base_price,
         cover_image: newProduct.cover_image || null,
         active: newProduct.active,
+        category: newProduct.category,
       },
     ]);
 
@@ -65,6 +73,7 @@ export default function AdminProductsPage() {
       base_price: 0,
       cover_image: "",
       active: true,
+      category: "mug",
     });
     toast({ title: "Éxito", description: "Producto creado" });
     await refreshProducts();
@@ -152,6 +161,7 @@ export default function AdminProductsPage() {
         base_price: updated.base_price,
         cover_image: updated.cover_image,
         active: updated.active,
+        category: updated.category,
       })
       .eq("id", updated.id);
 
@@ -175,6 +185,7 @@ export default function AdminProductsPage() {
     price_adj: 0,
     stock: 0,
     active: true,
+    attributes: {} as Record<string, string | number>,
   });
 
   const openVariantForm = (variant?: ProductVariant) => {
@@ -187,6 +198,7 @@ export default function AdminProductsPage() {
         price_adj: variant.price_adj ?? 0,
         stock: variant.stock ?? 0,
         active: variant.active ?? true,
+        attributes: (variant.attributes as Record<string, string | number>) ?? {},
       });
     } else {
       setEditingVariant(null);
@@ -197,6 +209,7 @@ export default function AdminProductsPage() {
         price_adj: 0,
         stock: 0,
         active: true,
+        attributes: {},
       });
     }
     setShowVariantForm(true);
@@ -212,10 +225,15 @@ export default function AdminProductsPage() {
       return;
     }
 
+    const targetProduct =
+      editing ?? products.find((p) => p.product_variants?.[0]?.product_id === editingVariant?.id);
+    const productId = editing?.id ?? targetProduct?.id;
+    if (!productId) return;
+
     if (editingVariant) {
       const { error } = await sb
         .from("product_variants")
-        .update(variantForm)
+        .update({ ...variantForm, attributes: variantForm.attributes })
         .eq("id", editingVariant.id);
 
       if (error) {
@@ -228,7 +246,7 @@ export default function AdminProductsPage() {
       const { error } = await sb.from("product_variants").insert([
         {
           ...variantForm,
-          product_id: editing?.id,
+          product_id: productId,
         },
       ]);
 
@@ -328,6 +346,23 @@ export default function AdminProductsPage() {
                   className="h-10"
                 />
               </div>
+              <div>
+                <Label htmlFor="product-category">Categoría</Label>
+                <select
+                  id="product-category"
+                  value={newProduct.category}
+                  onChange={(e) =>
+                    setNewProduct({ ...newProduct, category: e.target.value as ProductCategory })
+                  }
+                  className="h-10 w-full rounded-xl border-2 border-slate-200 bg-white px-3 text-sm focus:border-terracotta focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+                >
+                  {CATEGORIES.map((c) => (
+                    <option key={c.value} value={c.value}>
+                      {c.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <div className="md:col-span-2">
                 <ImageUpload
                   value={newProduct.cover_image || undefined}
@@ -362,6 +397,7 @@ export default function AdminProductsPage() {
                     base_price: 0,
                     cover_image: "",
                     active: true,
+                    category: "mug",
                   })
                 }
               >
@@ -385,6 +421,9 @@ export default function AdminProductsPage() {
                   <tr className="border-b border-slate-200 dark:border-slate-700">
                     <th className="text-left py-3 font-semibold text-slate-700 dark:text-slate-300">
                       Nombre
+                    </th>
+                    <th className="text-left py-3 font-semibold text-slate-700 dark:text-slate-300">
+                      Categoría
                     </th>
                     <th className="text-left py-3 font-semibold text-slate-700 dark:text-slate-300">
                       Slug
@@ -413,6 +452,7 @@ export default function AdminProductsPage() {
                       className="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-900"
                     >
                       <td className="py-3 font-medium">{p.name}</td>
+                      <td className="py-3 text-sm text-slate-500">{p.category}</td>
                       <td className="py-3">{p.slug}</td>
                       <td className="py-3 text-center">
                         {p.cover_image ? (
@@ -502,6 +542,26 @@ export default function AdminProductsPage() {
                     className="h-10"
                   />
                 </div>
+                <div>
+                  <Label htmlFor="edit-category">Categoría</Label>
+                  <select
+                    id="edit-category"
+                    value={currentProduct.category}
+                    onChange={(e) =>
+                      setEditing({
+                        ...currentProduct!,
+                        category: e.target.value as ProductCategory,
+                      })
+                    }
+                    className="h-10 w-full rounded-xl border-2 border-slate-200 bg-white px-3 text-sm focus:border-terracotta focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+                  >
+                    {CATEGORIES.map((c) => (
+                      <option key={c.value} value={c.value}>
+                        {c.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
                 <div className="md:col-span-2">
                   <ImageUpload
                     value={currentProduct.cover_image}
@@ -562,6 +622,9 @@ export default function AdminProductsPage() {
                             </span>
                             <div className="text-xs text-slate-500 dark:text-slate-400">
                               {v.color_hex} • Stock: {v.stock} • Precio: ${v.price_adj}
+                              {v.attributes && Object.keys(v.attributes).length > 0 && (
+                                <span> • Atributos: {JSON.stringify(v.attributes)}</span>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -626,6 +689,24 @@ export default function AdminProductsPage() {
                   imageUrl={variantForm.image_url || undefined}
                 />
               </div>
+              {/* Dynamic size field for clothing */}
+              {editing?.category === "clothing" && (
+                <div>
+                  <Label htmlFor="variant-size">Talla (S/M/L/XL/XXL)</Label>
+                  <Input
+                    id="variant-size"
+                    value={(variantForm.attributes as Record<string, string>)?.size ?? ""}
+                    onChange={(e) =>
+                      setVariantForm({
+                        ...variantForm,
+                        attributes: { ...variantForm.attributes, size: e.target.value },
+                      })
+                    }
+                    placeholder="ej. M"
+                    className="h-10"
+                  />
+                </div>
+              )}
               <div className="md:col-span-2">
                 <ImageUpload
                   value={variantForm.image_url || undefined}

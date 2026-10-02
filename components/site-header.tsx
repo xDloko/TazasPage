@@ -33,6 +33,13 @@ export function SiteHeader() {
     ...(user?.role === "admin" ? [{ href: "/admin", label: "Admin" }] : []),
   ];
 
+  // Category links for header
+  const categoryItems = [
+    { href: "/tienda?category=mug", label: "Tazas" },
+    { href: "/tienda?category=clothing", label: "Ropa" },
+    { href: "/tienda?category=accessory", label: "Accesorios" },
+  ];
+
   if (isLoading) {
     return null;
   }
@@ -67,6 +74,23 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
+            {/* Category dropdown */}
+            <div className="relative group">
+              <button className="text-sm font-semibold text-slate-600 hover:text-terracotta dark:text-slate-300">
+                Categorías
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-40 rounded-xl bg-white px-2 py-2 shadow-lg dark:bg-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                {categoryItems.map((c) => (
+                  <Link
+                    key={c.href}
+                    href={c.href}
+                    className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700"
+                  >
+                    {c.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
             <Link
               href="/carrito"
               className="relative flex items-center gap-2 rounded-xl px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-terracotta dark:text-slate-300"
@@ -107,6 +131,20 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
+            {/* Mobile category links */}
+            <div className="mt-2 border-t border-slate-200 py-2 dark:border-slate-700">
+              <p className="px-4 text-xs font-semibold uppercase text-slate-400">Categorías</p>
+              {categoryItems.map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block rounded-xl px-4 py-2 text-sm text-slate-600 dark:text-slate-300"
+                >
+                  {c.label}
+                </Link>
+              ))}
+            </div>
             <Link
               href="/carrito"
               onClick={() => setMobileOpen(false)}

@@ -24,6 +24,10 @@ export interface CartItem {
   note?: string | null;
   /** Referencia al diseño guardado (capas/preview). */
   design_id?: string | null;
+  /** Categoría del producto (mug, clothing, accessory) — para UI category-aware. */
+  category?: "mug" | "clothing" | "accessory";
+  /** Atributos de la variante (size, color, etc.) — para display en carrito/checkout. */
+  variant_attributes?: Record<string, string | number>;
 }
 
 /* eslint-disable no-unused-vars */
